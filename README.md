@@ -173,6 +173,8 @@ outputs/<run_name>/
     integrated_embedding.csv
     pathway_scores.csv
   figures/
+    integrated_umap.svg
+    pathway_heatmap.svg
   logs/
   web/
     index.html
@@ -197,6 +199,14 @@ Coordinates used in the web report. Current columns include:
 ### `pathway_scores.csv`
 
 Per-cell pathway activity matrix. Rows are query cells and columns are pathway names. Scores are currently simple mean normalized expression across matched genes in each pathway.
+
+### `figures/integrated_umap.svg`
+
+Static SVG graph of the integrated reference map. Reference cells are green and query cells are red. This file is suitable for GitHub previews, slides, and manuscript drafts.
+
+### `figures/pathway_heatmap.svg`
+
+Static SVG heatmap of query-cell pathway activity. Rows are query cells and columns are pathways.
 
 ### `web/index.html`
 

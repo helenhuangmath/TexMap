@@ -48,6 +48,26 @@ Combined reference and query coordinates for visualization.
 
 Pathway activity table with cells as rows and pathways as columns.
 
+## figures/integrated_umap.svg
+
+Static SVG graph of reference and query cells in integrated map coordinates.
+
+| Visual element | Description |
+| --- | --- |
+| green point | Reference cell. |
+| red point | Query/input cell. |
+| point title | Cell ID or transferred label when available. |
+
+## figures/pathway_heatmap.svg
+
+Static SVG heatmap of pathway scores.
+
+| Visual element | Description |
+| --- | --- |
+| row | Query/input cell. |
+| column | Pathway or gene set. |
+| color intensity | Relative pathway score. |
+
 ## web/index.html
 
 Self-contained HTML report. It can be opened directly in a browser and shared with collaborators alongside the output tables.

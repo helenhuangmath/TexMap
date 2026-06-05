@@ -15,6 +15,8 @@ class PipelineSmokeTest(unittest.TestCase):
             self.assertTrue(report.exists())
             self.assertTrue((config.output.directory / "tables" / "integrated_embedding.csv").exists())
             self.assertTrue((config.output.directory / "tables" / "pathway_scores.csv").exists())
+            self.assertTrue((config.output.directory / "figures" / "integrated_umap.svg").exists())
+            self.assertTrue((config.output.directory / "figures" / "pathway_heatmap.svg").exists())
 
 
 if __name__ == "__main__":

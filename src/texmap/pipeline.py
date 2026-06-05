@@ -4,6 +4,7 @@ import math
 from pathlib import Path
 
 from texmap.config import TexMapConfig
+from texmap.figures import write_figures
 from texmap.io import Matrix, ensure_output_dirs, read_counts, read_metadata, read_table, write_table
 from texmap.pathways import compute_pathway_scores
 from texmap.report import write_report
@@ -87,6 +88,7 @@ def pathways(config: TexMapConfig) -> Path:
 
 def report(config: TexMapConfig) -> Path:
     paths = ensure_output_dirs(config)
+    write_figures(paths)
     return write_report(config, paths)
 
 
