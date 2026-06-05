@@ -1,0 +1,14 @@
+I want to create an open software on github to host my single cell integration jobs. The goal is:
+1. Automated harmonize user input data, perform standarded sc analysis and then integrate it to the map
+2. The tool can present a webpage so users can easily explore the data and check where the user input located on the integrated umap
+3. The tool can perform pathway analysis like that, to give biological meannings and AI agent and suggestions 
+4. The tool have the ability to integrate scATAC data, and can view the epigenetic data 
+5. The tool can link many epigenetic data resource, to have more biological insights 
+6. the tool can be extended to cross-species data integration 
+7. The tool can also do bulk-RNA data integration 
+
+Also help me to brainstorm what this tool can do so be beneficial for broader community 
+
+
+
+

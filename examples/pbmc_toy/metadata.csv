@@ -1,0 +1,9 @@
+cell,sample,condition
+query_T_1,demo,control
+query_T_2,demo,control
+query_NK_1,demo,stimulated
+query_NK_2,demo,stimulated
+query_Mono_1,demo,stimulated
+query_Mono_2,demo,stimulated
+query_B_1,demo,control
+query_B_2,demo,control

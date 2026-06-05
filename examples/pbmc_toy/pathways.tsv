@@ -1,0 +1,5 @@
+T_cell_activation	CD3D	CD3E	IL7R	CCR7	TRAC
+Cytotoxicity	NKG7	GNLY	GZMB	PRF1	IFNG
+Interferon_response	ISG15	IFIT1	IFIT3	MX1	STAT1
+Myeloid_inflammation	LYZ	S100A8	S100A9	IL1B	FCGR3A
+B_cell_program	MS4A1	CD79A	CD79B	BANK1	IGHM
