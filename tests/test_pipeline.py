@@ -28,6 +28,11 @@ class PipelineSmokeTest(unittest.TestCase):
             self.assertIn("../figures/pathway_heatmap.svg", html)
             self.assertIn("Agentic Workflow", html)
             self.assertIn("Foundation Models", html)
+            self.assertIn("TexMap interactive explorer", html)
+            self.assertIn("id=\"colorMode\"", html)
+            self.assertIn("id=\"labelFilter\"", html)
+            self.assertIn("downloadSelection", html)
+            self.assertIn("Wheel to zoom, drag to pan, click a cell", html)
 
 
 if __name__ == "__main__":

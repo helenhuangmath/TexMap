@@ -110,4 +110,4 @@ Static SVG heatmap of pathway scores.
 
 ## web/index.html
 
-HTML report with AI-enabled feature cards, embedded figure panels, QC metrics, an interactive map canvas, pathway score controls, and links to downloadable static figures/artifacts. It can be opened directly in a browser and shared with collaborators alongside the output tables and `figures/` folder.
+HTML report with a cellxgene-like explorer, AI-enabled feature cards, embedded figure panels, QC metrics, pathway score controls, selected-cell CSV download, and links to downloadable static figures/artifacts. The explorer supports zoom, pan, hover tooltips, click-to-inspect cell details, cell search, source/label filters, color-by controls, and pathway overlays. It can be opened directly in a browser and shared with collaborators alongside the output tables and `figures/` folder.

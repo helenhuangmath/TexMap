@@ -249,6 +249,7 @@ Projection plan describing batching, out-of-core, and GPU-acceleration hooks for
 
 A self-contained browser report showing:
 
+- A cellxgene-like interactive explorer with zoom, pan, hover tooltips, click-to-inspect cell details, search, source/label filters, color-by controls, pathway overlays, and selected-cell CSV download.
 - A figure gallery with generated UMAP and pathway SVGs.
 - AI-enabled feature cards for agentic workflows, ML-ready exports, foundation-model adapters, benchmarks, scalability, and interpretation.
 - Query cells overlaid with reference cells.

@@ -57,3 +57,5 @@ outputs/pbmc_toy/benchmark/
 outputs/pbmc_toy/scalability/
 outputs/pbmc_toy/web/index.html
 ```
+
+The web page is an interactive cell explorer with zoom, pan, hover, cell search, color-by controls, label/source filters, pathway overlays, and selected-cell CSV download.

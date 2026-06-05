@@ -5,49 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PBMC toy integration | TexMap</title>
   <style>
-    :root { color-scheme: light; --ink: #1d2433; --muted: #5f6b7a; --line: #d8dee8; --query: #d94c36; --ref: #32746d; --accent: #255f85; }
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: #f7f8fa; }
-    header { padding: 24px 32px 16px; background: #ffffff; border-bottom: 1px solid var(--line); }
-    h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: 0; }
-    main { padding: 18px 32px 32px; }
-    .report-grid { display: grid; grid-template-columns: minmax(360px, 1fr) 340px; gap: 18px; }
-    section, aside { background: #ffffff; border: 1px solid var(--line); border-radius: 8px; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 18px; margin-bottom: 18px; }
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 18px; }
+    :root { color-scheme: light; --ink: #1d2433; --muted: #5f6b7a; --line: #d8dee8; --soft: #f7f8fa; --query: #d94c36; --ref: #32746d; --accent: #255f85; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--soft); }
+    header { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; padding: 18px 24px 14px; background: #ffffff; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0 0 4px; font-size: 26px; letter-spacing: 0; }
+    h2 { margin: 0; font-size: 16px; letter-spacing: 0; }
+    button, select, input { font: inherit; }
+    button { min-height: 34px; border: 1px solid var(--line); border-radius: 6px; background: #ffffff; color: var(--ink); padding: 6px 10px; cursor: pointer; }
+    button:hover { border-color: var(--accent); }
+    main { padding: 14px 18px 28px; }
+    .muted { color: var(--muted); font-size: 13px; }
+    .metrics { display: grid; grid-template-columns: repeat(3, 132px); gap: 8px; }
+    .metric { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; background: #fbfcfd; }
+    .metric strong { display: block; font-size: 19px; }
+    .explorer { display: grid; grid-template-columns: 260px minmax(520px, 1fr) 320px; gap: 14px; min-height: 720px; }
+    .panel, .feature, .figure-card { background: #ffffff; border: 1px solid var(--line); border-radius: 8px; }
+    .panel { padding: 14px; }
+    .panel h2 { margin-bottom: 12px; }
+    label { display: block; font-size: 12px; color: var(--muted); margin: 12px 0 5px; }
+    select, input[type="search"] { width: 100%; min-height: 34px; border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; background: white; }
+    .check-row { display: flex; align-items: center; gap: 8px; margin: 8px 0; font-size: 13px; }
+    .button-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+    .legend-list { display: grid; gap: 6px; margin-top: 8px; max-height: 180px; overflow: auto; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+    .swatch { width: 11px; height: 11px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.12); flex: 0 0 auto; }
+    .canvas-panel { display: grid; grid-template-rows: auto 1fr auto; min-height: 720px; overflow: hidden; }
+    .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+    .toolbar-left, .toolbar-right { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .viewport { position: relative; min-height: 560px; background: #fbfcfd; }
+    canvas { width: 100%; height: 100%; min-height: 560px; display: block; }
+    .tooltip { position: absolute; pointer-events: none; z-index: 4; display: none; min-width: 160px; max-width: 260px; padding: 8px 10px; background: rgba(29,36,51,0.94); color: white; border-radius: 6px; font-size: 12px; line-height: 1.35; }
+    .status-bar { display: flex; justify-content: space-between; gap: 12px; padding: 9px 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .inspector dl { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 7px 10px; margin: 0; font-size: 13px; }
+    .inspector dt { color: var(--muted); }
+    .inspector dd { margin: 0; overflow-wrap: anywhere; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 10px; }
+    th, td { text-align: left; border-bottom: 1px solid var(--line); padding: 6px 4px; }
+    .tabs { display: flex; gap: 8px; margin: 14px 0 0; }
+    .tabs button.active { border-color: var(--accent); background: #eaf3f7; }
+    .tab-section { display: none; }
+    .tab-section.active { display: block; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-top: 14px; }
     .feature { padding: 14px 16px; }
-    .feature h2 { margin: 0 0 8px; font-size: 16px; letter-spacing: 0; }
+    .feature h2 { margin-bottom: 8px; }
     .feature p { margin: 0 0 10px; color: var(--muted); line-height: 1.35; font-size: 13px; }
     .feature a { color: var(--accent); font-size: 13px; text-decoration: none; }
     .feature strong { font-size: 22px; display: block; margin-bottom: 4px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 14px; margin-top: 14px; }
     .figure-card { overflow: hidden; }
-    .figure-card h2 { margin: 0; padding: 14px 16px 4px; font-size: 18px; letter-spacing: 0; }
+    .figure-card h2 { padding: 14px 16px 4px; }
     .figure-card p { margin: 0; padding: 0 16px 12px; color: var(--muted); font-size: 13px; }
     .figure-card a { display: block; color: inherit; text-decoration: none; }
     .figure-card img { display: block; width: 100%; height: auto; border-top: 1px solid var(--line); background: #ffffff; }
-    .plot-wrap { padding: 16px; min-height: 560px; }
-    canvas { width: 100%; height: 560px; border: 1px solid var(--line); border-radius: 6px; background: #fbfcfd; }
-    aside { padding: 16px; }
-    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
-    .metric { border: 1px solid var(--line); border-radius: 6px; padding: 10px; background: #fbfcfd; }
-    .metric strong { display: block; font-size: 20px; }
-    label { display: block; font-size: 13px; color: var(--muted); margin: 14px 0 6px; }
-    select { width: 100%; min-height: 36px; border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; background: white; }
-    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
-    th, td { text-align: left; border-bottom: 1px solid var(--line); padding: 7px 4px; }
-    .legend { display: flex; gap: 16px; align-items: center; margin-top: 10px; color: var(--muted); font-size: 13px; }
-    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; }
-    @media (max-width: 860px) { main { padding: 12px; } .report-grid { grid-template-columns: 1fr; } .gallery { grid-template-columns: 1fr; } header { padding: 18px 12px; } canvas { height: 420px; } }
+    @media (max-width: 1050px) { header { display: block; } .metrics { margin-top: 12px; grid-template-columns: repeat(3, 1fr); } .explorer { grid-template-columns: 1fr; } .canvas-panel { min-height: 620px; } }
   </style>
 </head>
 <body>
   <header>
-    <h1>PBMC toy integration</h1>
-    <div>TexMap integration report</div>
+    <div>
+      <h1>PBMC toy integration</h1>
+      <div class="muted">TexMap interactive explorer</div>
+    </div>
     <div class="metrics" id="metrics"></div>
   </header>
   <main>
-    <div class="feature-grid">
-      <section class="feature">
+    <section class="explorer" aria-label="Interactive cell explorer">
+      <aside class="panel">
+        <h2>Explore</h2>
+        <label for="search">Cell search</label>
+        <input id="search" type="search" placeholder="query_T_1, NK, B cell">
+        <label for="colorMode">Color by</label>
+        <select id="colorMode">
+          <option value="source">source</option>
+          <option value="label">predicted label</option>
+          <option value="pathway">pathway score</option>
+        </select>
+        <label for="pathway">Pathway</label>
+        <select id="pathway"></select>
+        <label for="labelFilter">Label filter</label>
+        <select id="labelFilter"><option value="all">all labels</option></select>
+        <div class="check-row"><input id="showReference" type="checkbox" checked><span>reference cells</span></div>
+        <div class="check-row"><input id="showQuery" type="checkbox" checked><span>query cells</span></div>
+        <div class="button-row">
+          <button id="resetView">Reset view</button>
+          <button id="downloadSelection">Download selected</button>
+        </div>
+        <label>Legend</label>
+        <div class="legend-list" id="legend"></div>
+        <p class="muted">Wheel to zoom, drag to pan, click a cell to inspect it.</p>
+      </aside>
+      <section class="canvas-panel">
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <strong>Integrated map</strong>
+            <span class="muted" id="visibleCount"></span>
+          </div>
+          <div class="toolbar-right">
+            <button id="zoomIn">+</button>
+            <button id="zoomOut">-</button>
+            <button id="copyCell">Copy cell ID</button>
+          </div>
+        </div>
+        <div class="viewport" id="viewport">
+          <canvas id="plot" width="1200" height="760"></canvas>
+          <div class="tooltip" id="tooltip"></div>
+        </div>
+        <div class="status-bar">
+          <span id="hoverStatus">Hover over a cell</span>
+          <span id="viewStatus">zoom 1.00x</span>
+        </div>
+      </section>
+      <aside class="panel inspector">
+        <h2>Cell inspector</h2>
+        <dl id="cellDetails"></dl>
+        <table>
+          <thead><tr><th>Cell</th><th>Label</th><th>Score</th></tr></thead>
+          <tbody id="topCells"></tbody>
+        </table>
+      </aside>
+    </section>
+    <div class="tabs">
+      <button class="active" data-tab="features">AI outputs</button>
+      <button data-tab="figures">Static figures</button>
+    </div>
+    <section id="features" class="tab-section active"><div class="feature-grid"><section class="feature">
         <h2>AI Interpretation</h2>
         
         <p>Most query cells map nearest to CD4 T cell. The strongest pathway programs are Interferon_response, Cytotoxicity, T_cell_activation. Cells without confident reference matches should be reviewed as potential novel or transitional states.</p>
@@ -82,10 +164,8 @@
         
         <p>8 observed cells. Recommended mode: single_process_core.</p>
         <a href="../scalability/projection_plan.json">Open artifact</a>
-      </section>
-    </div>
-    <div class="gallery">
-      <section class="figure-card">
+      </section></div></section>
+    <section id="figures" class="tab-section"><div class="gallery"><section class="figure-card">
         <h2>Integrated UMAP</h2>
         <p>Reference and query cells in shared map coordinates.</p>
         <a href="../figures/integrated_umap.svg" download><img src="../figures/integrated_umap.svg" alt="Integrated UMAP"></a>
@@ -94,32 +174,40 @@
         <h2>Pathway Heatmap</h2>
         <p>Pathway activity scores across query cells.</p>
         <a href="../figures/pathway_heatmap.svg" download><img src="../figures/pathway_heatmap.svg" alt="Pathway Heatmap"></a>
-      </section>
-    </div>
-    <div class="report-grid">
-      <section class="plot-wrap">
-        <canvas id="plot" width="1100" height="760"></canvas>
-        <div class="legend"><span><i class="dot" style="background: var(--ref)"></i>reference</span><span><i class="dot" style="background: var(--query)"></i>query</span></div>
-      </section>
-      <aside>
-        <label for="pathway">Pathway score</label>
-        <select id="pathway"></select>
-        <table>
-          <thead><tr><th>Cell</th><th>Nearest label</th><th>Score</th></tr></thead>
-          <tbody id="topCells"></tbody>
-        </table>
-      </aside>
-    </div>
+      </section></div></section>
   </main>
   <script>
     const TEXMAP = {"project": "PBMC toy integration", "embedding": [{"cell": "ref_T_1", "UMAP1": 2.35, "UMAP2": 2.65, "source": "reference", "predicted_label": null}, {"cell": "ref_T_2", "UMAP1": 2.75, "UMAP2": 2.85, "source": "reference", "predicted_label": null}, {"cell": "ref_NK_1", "UMAP1": 1.35, "UMAP2": 4.65, "source": "reference", "predicted_label": null}, {"cell": "ref_NK_2", "UMAP1": 2.05, "UMAP2": 4.45, "source": "reference", "predicted_label": null}, {"cell": "ref_Mono_1", "UMAP1": 2.25, "UMAP2": 3.45, "source": "reference", "predicted_label": null}, {"cell": "ref_Mono_2", "UMAP1": 2.32, "UMAP2": 2.48, "source": "reference", "predicted_label": null}, {"cell": "ref_B_1", "UMAP1": 2.35, "UMAP2": 1.05, "source": "reference", "predicted_label": null}, {"cell": "ref_B_2", "UMAP1": 2.55, "UMAP2": 1.65, "source": "reference", "predicted_label": null}, {"cell": "query_T_1", "UMAP1": 2.3093705855973004, "UMAP2": 2.973883960316149, "source": "query", "predicted_label": "CD4 T cell"}, {"cell": "query_T_2", "UMAP1": 2.806730754038044, "UMAP2": 2.5286965099870407, "source": "query", "predicted_label": "CD4 T cell"}, {"cell": "query_NK_1", "UMAP1": 2.194051141644665, "UMAP2": 4.483659599113511, "source": "query", "predicted_label": "NK cell"}, {"cell": "query_NK_2", "UMAP1": 1.2732363917975504, "UMAP2": 4.536434735641148, "source": "query", "predicted_label": "NK cell"}, {"cell": "query_Mono_1", "UMAP1": 2.327580402266695, "UMAP2": 3.534194053866648, "source": "query", "predicted_label": "Monocyte"}, {"cell": "query_Mono_2", "UMAP1": 2.3479921360739944, "UMAP2": 2.4971098417404884, "source": "query", "predicted_label": "Monocyte"}, {"cell": "query_B_1", "UMAP1": 2.418174514221346, "UMAP2": 1.0687855755600177, "source": "query", "predicted_label": "B cell"}, {"cell": "query_B_2", "UMAP1": 2.402446246436733, "UMAP2": 1.6982577674879784, "source": "query", "predicted_label": "B cell"}], "pathwayColumns": ["B_cell_program", "Cytotoxicity", "Interferon_response", "Myeloid_inflammation", "T_cell_activation"], "pathways": [{"cell": "query_T_1", "B_cell_program": 0.0, "Cytotoxicity": 0.9672563813902956, "Interferon_response": 3.4539116153610876, "Myeloid_inflammation": 0.0, "T_cell_activation": 7.5269057412199505}, {"cell": "query_T_2", "B_cell_program": 0.0, "Cytotoxicity": 2.1488782645538023, "Interferon_response": 1.6757546484366266, "Myeloid_inflammation": 0.0, "T_cell_activation": 7.516523474434391}, {"cell": "query_NK_1", "B_cell_program": 0.0, "Cytotoxicity": 7.500178967593234, "Interferon_response": 4.994181216822034, "Myeloid_inflammation": 0.0, "T_cell_activation": 2.858733783829898}, {"cell": "query_NK_2", "B_cell_program": 0.0, "Cytotoxicity": 7.494911130018099, "Interferon_response": 5.213015150992711, "Myeloid_inflammation": 0.0, "T_cell_activation": 0.9966220342636711}, {"cell": "query_Mono_1", "B_cell_program": 0.0, "Cytotoxicity": 1.9990438604316398, "Interferon_response": 6.052636240701612, "Myeloid_inflammation": 7.616154134267598, "T_cell_activation": 0.0}, {"cell": "query_Mono_2", "B_cell_program": 0.0, "Cytotoxicity": 0.0, "Interferon_response": 5.930476052825871, "Myeloid_inflammation": 7.664897904916804, "T_cell_activation": 0.0}, {"cell": "query_B_1", "B_cell_program": 8.060581714071153, "Cytotoxicity": 0.0, "Interferon_response": 3.562618585200059, "Myeloid_inflammation": 0.0, "T_cell_activation": 0.0}, {"cell": "query_B_2", "B_cell_program": 8.00815415478911, "Cytotoxicity": 0.0, "Interferon_response": 5.660859224959928, "Myeloid_inflammation": 0.0, "T_cell_activation": 0.0}], "qcSummary": {"n_cells": 8, "median_counts": 67.0, "median_genes": 8.0}, "figures": [{"src": "../figures/integrated_umap.svg", "title": "Integrated UMAP", "caption": "Reference and query cells in shared map coordinates."}, {"src": "../figures/pathway_heatmap.svg", "title": "Pathway Heatmap", "caption": "Pathway activity scores across query cells."}], "interpretation": {"project": "PBMC toy integration", "plain_language_summary": "Most query cells map nearest to CD4 T cell. The strongest pathway programs are Interferon_response, Cytotoxicity, T_cell_activation. Cells without confident reference matches should be reviewed as potential novel or transitional states.", "label_counts": {"CD4 T cell": 2, "NK cell": 2, "Monocyte": 2, "B cell": 2}, "top_pathways": ["Interferon_response", "Cytotoxicity", "T_cell_activation", "B_cell_program", "Myeloid_inflammation"], "suggested_next_steps": ["Review query cells with low pathway specificity or missing nearest-reference labels.", "Compare terminal Tex, memory, effector, and naive marker programs in the figure gallery.", "Use the ML-ready export for downstream model training or independent validation."]}, "agentResult": {"project": "PBMC toy integration", "status": "complete", "request": {"task": "annotate_and_compare", "reference_state": "terminal Tex", "return": ["tables", "figures", "web_report", "json_summary"]}, "outputs": {"web_report": "web/index.html", "integrated_embedding": "tables/integrated_embedding.csv", "pathway_scores": "tables/pathway_scores.csv", "ml_ready_manifest": "ml_ready/manifest.json", "benchmark_metrics": "benchmark/metrics.json"}, "chainable_result": {"format": "texmap.result.v0", "primary_key": "cell", "coordinate_columns": ["UMAP1", "UMAP2"], "annotation_column": "predicted_label"}}, "mlManifest": {"project": "PBMC toy integration", "feature_file": "features.csv", "label_file": "labels.csv", "split_file": "splits.csv", "feature_space": "reference_aligned_umap_plus_normalized_hvg_expression", "split_policy": "deterministic 60/20/20 by sorted cell id", "intended_use": "model training, validation, evaluation, and reference-aligned benchmarking"}, "foundationModelManifest": {"project": "PBMC toy integration", "mode": "consume_existing_foundation_models", "default_backbone": "texmap_core_lightweight", "supported_backbones": [{"name": "scGPT", "status": "adapter_stub", "role": "Optional embedding backbone for projection into TexMap references.", "expected_input": "AnnData or count matrix with gene symbols."}, {"name": "Geneformer", "status": "adapter_stub", "role": "Optional transformer-derived cell embedding provider.", "expected_input": "Tokenized ranked gene expression."}, {"name": "scFoundation", "status": "adapter_stub", "role": "Optional foundation-model feature extractor.", "expected_input": "Normalized expression matrix."}, {"name": "UCE", "status": "adapter_stub", "role": "Optional universal cell embedding provider.", "expected_input": "Species-aware expression matrix."}], "contract": {"input": "cell x feature matrix", "output": "cell x embedding matrix with stable cell ids", "required_columns": ["cell"], "recommended_metadata": ["species", "gene_id_space", "model_name", "model_version"]}}, "benchmarkMetrics": {"project": "PBMC toy integration", "task": "exhaustion_state_annotation", "n_evaluated": 8, "accuracy": 1.0, "scoring_harness": "exact label match when expected_label is present in metadata", "prediction_file": "predictions.csv"}, "scalabilityPlan": {"project": "PBMC toy integration", "observed_cells": 8, "execution_mode": "single_process_core", "planned_acceleration": ["chunked out-of-core count loading", "GPU embedding backbones when optional foundation-model adapters are enabled", "batched nearest-neighbor projection", "streaming report/table writers for million-cell cohorts"], "batching_recommendation": {"target_cells_per_chunk": 100000, "preserve_cell_order": true, "merge_outputs_by": "cell"}}};
     const canvas = document.getElementById('plot');
     const ctx = canvas.getContext('2d');
+    const viewport = document.getElementById('viewport');
+    const tooltip = document.getElementById('tooltip');
     const pathwaySelect = document.getElementById('pathway');
+    const colorMode = document.getElementById('colorMode');
+    const labelFilter = document.getElementById('labelFilter');
+    const search = document.getElementById('search');
+    const showReference = document.getElementById('showReference');
+    const showQuery = document.getElementById('showQuery');
+    const selected = new Set();
+    let activeCell = null;
+    let dragging = false;
+    let startPointer = null;
+    let lastPointer = null;
+    let view = { scale: 1, tx: 0, ty: 0 };
+    const palette = ['#32746d','#d94c36','#255f85','#8a5a44','#7c6a0a','#7a4e9d','#218380','#d9822b','#6979f8','#c44569'];
     const pathwayByCell = new Map(TEXMAP.pathways.map(d => [d.cell, d]));
+    const points = TEXMAP.embedding
+      .filter(d => Number.isFinite(d.UMAP1) && Number.isFinite(d.UMAP2))
+      .map(d => ({...d, x: d.UMAP1, y: d.UMAP2, screenX: 0, screenY: 0}));
+    const labels = [...new Set(points.map(d => d.predicted_label || (d.source === 'reference' ? 'reference' : 'unassigned')))].sort();
+    const labelColors = new Map(labels.map((label, i) => [label, palette[i % palette.length]]));
     for (const col of TEXMAP.pathwayColumns) {
       const opt = document.createElement('option');
       opt.value = col; opt.textContent = col; pathwaySelect.appendChild(opt);
+    }
+    for (const label of labels.filter(l => l !== 'reference')) {
+      const opt = document.createElement('option');
+      opt.value = label; opt.textContent = label; labelFilter.appendChild(opt);
     }
     function metric(label, value) {
       return `<div class="metric"><strong>${value ?? 'NA'}</strong><span>${label}</span></div>`;
@@ -129,30 +217,145 @@
       metric('median counts', Math.round(TEXMAP.qcSummary.median_counts ?? 0)),
       metric('median genes', Math.round(TEXMAP.qcSummary.median_genes ?? 0))
     ].join('');
+    function resizeCanvas() {
+      const rect = viewport.getBoundingClientRect();
+      const ratio = window.devicePixelRatio || 1;
+      canvas.width = Math.max(640, Math.floor(rect.width * ratio));
+      canvas.height = Math.max(420, Math.floor(rect.height * ratio));
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      draw();
+    }
+    function filteredPoints() {
+      const term = search.value.trim().toLowerCase();
+      return points.filter(p => {
+        if (p.source === 'reference' && !showReference.checked) return false;
+        if (p.source === 'query' && !showQuery.checked) return false;
+        if (labelFilter.value !== 'all' && (p.predicted_label || '') !== labelFilter.value) return false;
+        if (term) {
+          const hay = `${p.cell} ${p.source} ${p.predicted_label || ''}`.toLowerCase();
+          if (!hay.includes(term)) return false;
+        }
+        return true;
+      });
+    }
+    const extent = (() => {
+      const xs = points.map(d => d.x), ys = points.map(d => d.y);
+      return { minX: Math.min(...xs), maxX: Math.max(...xs), minY: Math.min(...ys), maxY: Math.max(...ys) };
+    })();
+    function baseScale() {
+      const rect = canvas.getBoundingClientRect();
+      const sx = (rect.width - 96) / ((extent.maxX - extent.minX) || 1);
+      const sy = (rect.height - 96) / ((extent.maxY - extent.minY) || 1);
+      return Math.min(sx, sy);
+    }
+    function project(p) {
+      const rect = canvas.getBoundingClientRect();
+      const s = baseScale() * view.scale;
+      const cx = (extent.minX + extent.maxX) / 2;
+      const cy = (extent.minY + extent.maxY) / 2;
+      return { x: rect.width / 2 + (p.x - cx) * s + view.tx, y: rect.height / 2 - (p.y - cy) * s + view.ty };
+    }
+    function colorFor(p) {
+      if (colorMode.value === 'pathway') {
+        const score = Number(pathwayByCell.get(p.cell)?.[pathwaySelect.value] ?? 0);
+        const values = TEXMAP.pathways.map(d => Number(d[pathwaySelect.value] ?? 0));
+        const max = Math.max(1, ...values);
+        const t = Math.max(0, Math.min(1, score / max));
+        const r = Math.round(237 + (217 - 237) * t);
+        const g = Math.round(242 + (76 - 242) * t);
+        const b = Math.round(247 + (54 - 247) * t);
+        return `rgb(${r},${g},${b})`;
+      }
+      if (colorMode.value === 'label') return labelColors.get(p.predicted_label || (p.source === 'reference' ? 'reference' : 'unassigned')) || '#5f6b7a';
+      return p.source === 'query' ? '#d94c36' : '#32746d';
+    }
+    function drawLegend() {
+      const legend = document.getElementById('legend');
+      if (colorMode.value === 'pathway') {
+        legend.innerHTML = `<div class="legend-item"><span class="swatch" style="background:#edf2f7"></span>low ${pathwaySelect.value}</div><div class="legend-item"><span class="swatch" style="background:#d94c36"></span>high ${pathwaySelect.value}</div>`;
+        return;
+      }
+      const items = colorMode.value === 'source'
+        ? [['reference','#32746d'], ['query','#d94c36']]
+        : labels.map(label => [label, labelColors.get(label)]);
+      legend.innerHTML = items.map(([label, color]) => `<div class="legend-item"><span class="swatch" style="background:${color}"></span>${label}</div>`).join('');
+    }
     function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const pts = TEXMAP.embedding.filter(d => Number.isFinite(d.UMAP1) && Number.isFinite(d.UMAP2));
-      if (!pts.length) return;
-      const xs = pts.map(d => d.UMAP1), ys = pts.map(d => d.UMAP2);
-      const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
-      const pad = 54;
-      const scaleX = x => pad + (x - minX) / ((maxX - minX) || 1) * (canvas.width - pad * 2);
-      const scaleY = y => canvas.height - pad - (y - minY) / ((maxY - minY) || 1) * (canvas.height - pad * 2);
-      ctx.font = '18px Arial';
-      ctx.fillStyle = '#1d2433';
-      ctx.fillText('Integrated UMAP / projected query coordinates', pad, 32);
+      const rect = canvas.getBoundingClientRect();
+      ctx.clearRect(0, 0, rect.width, rect.height);
+      ctx.fillStyle = '#fbfcfd';
+      ctx.fillRect(0, 0, rect.width, rect.height);
+      ctx.strokeStyle = '#e3e8ef';
+      ctx.lineWidth = 1;
+      for (let x = 60; x < rect.width; x += 80) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, rect.height); ctx.stroke(); }
+      for (let y = 60; y < rect.height; y += 80) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(rect.width, y); ctx.stroke(); }
+      const pts = filteredPoints();
       for (const p of pts) {
+        const xy = project(p);
+        p.screenX = xy.x; p.screenY = xy.y;
         ctx.beginPath();
-        ctx.arc(scaleX(p.UMAP1), scaleY(p.UMAP2), p.source === 'query' ? 6 : 4, 0, Math.PI * 2);
-        ctx.fillStyle = p.source === 'query' ? '#d94c36' : '#32746d';
-        ctx.globalAlpha = p.source === 'query' ? 0.9 : 0.55;
+        ctx.arc(xy.x, xy.y, selected.has(p.cell) || activeCell?.cell === p.cell ? 8 : (p.source === 'query' ? 6 : 4), 0, Math.PI * 2);
+        ctx.fillStyle = colorFor(p);
+        ctx.globalAlpha = p.source === 'query' ? 0.9 : 0.52;
         ctx.fill();
+        if (selected.has(p.cell) || activeCell?.cell === p.cell) {
+          ctx.globalAlpha = 1;
+          ctx.strokeStyle = '#1d2433';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        }
       }
       ctx.globalAlpha = 1;
+      document.getElementById('visibleCount').textContent = `${pts.length} visible / ${points.length} cells`;
+      document.getElementById('viewStatus').textContent = `zoom ${view.scale.toFixed(2)}x`;
+      drawLegend();
+    }
+    function nearestCell(event) {
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      let best = null, bestD = 16 * 16;
+      for (const p of filteredPoints()) {
+        const d = (p.screenX - x) ** 2 + (p.screenY - y) ** 2;
+        if (d < bestD) { best = p; bestD = d; }
+      }
+      return best;
+    }
+    function setActiveCell(cell) {
+      activeCell = cell;
+      if (cell) selected.add(cell.cell);
+      const details = document.getElementById('cellDetails');
+      if (!cell) {
+        details.innerHTML = '<dt>Status</dt><dd>No cell selected</dd>';
+        return;
+      }
+      const scores = pathwayByCell.get(cell.cell) || {};
+      details.innerHTML = [
+        ['Cell', cell.cell],
+        ['Source', cell.source],
+        ['Label', cell.predicted_label || ''],
+        ['UMAP1', Number(cell.UMAP1).toFixed(3)],
+        ['UMAP2', Number(cell.UMAP2).toFixed(3)],
+        [pathwaySelect.value, Number(scores[pathwaySelect.value] ?? 0).toFixed(3)]
+      ].map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
+      draw();
+    }
+    function showTooltip(event, cell) {
+      if (!cell) {
+        tooltip.style.display = 'none';
+        document.getElementById('hoverStatus').textContent = 'Hover over a cell';
+        return;
+      }
+      const score = Number(pathwayByCell.get(cell.cell)?.[pathwaySelect.value] ?? 0).toFixed(3);
+      tooltip.innerHTML = `<strong>${cell.cell}</strong><br>${cell.source}<br>${cell.predicted_label || ''}<br>${pathwaySelect.value}: ${score}`;
+      tooltip.style.left = `${event.clientX - viewport.getBoundingClientRect().left + 12}px`;
+      tooltip.style.top = `${event.clientY - viewport.getBoundingClientRect().top + 12}px`;
+      tooltip.style.display = 'block';
+      document.getElementById('hoverStatus').textContent = `${cell.cell} ${cell.predicted_label || ''}`;
     }
     function updateTable() {
       const col = pathwaySelect.value;
-      const rows = TEXMAP.embedding
+      const rows = points
         .filter(d => d.source === 'query')
         .map(d => ({...d, score: pathwayByCell.get(d.cell)?.[col] ?? 0}))
         .sort((a, b) => b.score - a.score)
@@ -161,8 +364,63 @@
         `<tr><td>${r.cell}</td><td>${r.predicted_label ?? ''}</td><td>${Number(r.score).toFixed(3)}</td></tr>`
       ).join('');
     }
-    pathwaySelect.addEventListener('change', updateTable);
-    draw(); updateTable();
+    function zoom(mult, origin) {
+      const before = view.scale;
+      view.scale = Math.max(0.35, Math.min(12, view.scale * mult));
+      if (origin) {
+        view.tx = origin.x - (origin.x - view.tx) * (view.scale / before);
+        view.ty = origin.y - (origin.y - view.ty) * (view.scale / before);
+      }
+      draw();
+    }
+    canvas.addEventListener('wheel', event => {
+      event.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      zoom(event.deltaY < 0 ? 1.16 : 0.86, { x: event.clientX - rect.left, y: event.clientY - rect.top });
+    });
+    canvas.addEventListener('pointerdown', event => { dragging = true; startPointer = { x: event.clientX, y: event.clientY }; lastPointer = startPointer; canvas.setPointerCapture(event.pointerId); });
+    canvas.addEventListener('pointermove', event => {
+      if (dragging && lastPointer) {
+        view.tx += event.clientX - lastPointer.x;
+        view.ty += event.clientY - lastPointer.y;
+        lastPointer = { x: event.clientX, y: event.clientY };
+        draw();
+      } else {
+        showTooltip(event, nearestCell(event));
+      }
+    });
+    canvas.addEventListener('pointerup', event => {
+      const moved = startPointer ? Math.abs(event.clientX - startPointer.x) + Math.abs(event.clientY - startPointer.y) : 0;
+      dragging = false; lastPointer = null; startPointer = null;
+      if (moved < 6) setActiveCell(nearestCell(event));
+    });
+    canvas.addEventListener('mouseleave', event => { dragging = false; lastPointer = null; startPointer = null; showTooltip(event, null); });
+    document.getElementById('zoomIn').addEventListener('click', () => zoom(1.25));
+    document.getElementById('zoomOut').addEventListener('click', () => zoom(0.8));
+    document.getElementById('resetView').addEventListener('click', () => { view = { scale: 1, tx: 0, ty: 0 }; selected.clear(); setActiveCell(null); draw(); });
+    document.getElementById('copyCell').addEventListener('click', async () => { if (activeCell && navigator.clipboard) await navigator.clipboard.writeText(activeCell.cell); });
+    document.getElementById('downloadSelection').addEventListener('click', () => {
+      const rows = points.filter(p => selected.has(p.cell));
+      const csv = ['cell,source,predicted_label,UMAP1,UMAP2', ...rows.map(p => `${p.cell},${p.source},${p.predicted_label || ''},${p.UMAP1},${p.UMAP2}`)].join('\n');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+      a.download = 'texmap_selected_cells.csv';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+    for (const el of [pathwaySelect, colorMode, labelFilter, search, showReference, showQuery]) {
+      el.addEventListener('input', () => { updateTable(); draw(); if (activeCell) setActiveCell(activeCell); });
+    }
+    document.querySelectorAll('.tabs button').forEach(btn => btn.addEventListener('click', () => {
+      document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    }));
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    setActiveCell(null);
+    updateTable();
   </script>
 </body>
 </html>
