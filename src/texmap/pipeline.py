@@ -3,11 +3,16 @@ from __future__ import annotations
 import math
 from pathlib import Path
 
+from texmap.agent import write_agent_outputs, write_interpretation
+from texmap.benchmark import score_benchmark
 from texmap.config import TexMapConfig
 from texmap.figures import write_figures
+from texmap.foundation_models import write_foundation_model_manifest
 from texmap.io import Matrix, ensure_output_dirs, read_counts, read_metadata, read_table, write_table
+from texmap.ml_ready import export_ml_ready
 from texmap.pathways import compute_pathway_scores
 from texmap.report import write_report
+from texmap.scalability import write_scalability_plan
 
 
 def prepare(config: TexMapConfig) -> Path:
@@ -86,8 +91,20 @@ def pathways(config: TexMapConfig) -> Path:
     return paths["tables"] / "pathway_scores.csv"
 
 
+def ai(config: TexMapConfig) -> Path:
+    paths = ensure_output_dirs(config)
+    export_ml_ready(config, paths)
+    write_foundation_model_manifest(config, paths)
+    score_benchmark(config, paths)
+    write_scalability_plan(config, paths)
+    write_agent_outputs(config, paths)
+    return write_interpretation(config, paths)
+
+
 def report(config: TexMapConfig) -> Path:
     paths = ensure_output_dirs(config)
+    if not (paths["agent"] / "interpretation.json").exists():
+        ai(config)
     write_figures(paths)
     return write_report(config, paths)
 
@@ -97,6 +114,7 @@ def run(config: TexMapConfig) -> Path:
     analyze(config)
     integrate(config)
     pathways(config)
+    ai(config)
     return report(config)
 
 

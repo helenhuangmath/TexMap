@@ -1,0 +1,9 @@
+cell,split
+query_B_1,train
+query_B_2,train
+query_Mono_1,train
+query_Mono_2,train
+query_NK_1,train
+query_NK_2,val
+query_T_1,test
+query_T_2,test

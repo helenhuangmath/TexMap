@@ -10,7 +10,7 @@ from texmap import pipeline
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="texmap", description="Run TexMap single-cell integration workflows.")
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ["prepare", "analyze", "integrate", "pathways", "report", "run"]:
+    for name in ["prepare", "analyze", "integrate", "pathways", "ai", "report", "run"]:
         cmd = sub.add_parser(name, help=f"Run the {name} stage")
         cmd.add_argument("--config", required=True, help="Path to a TexMap YAML configuration.")
     return parser

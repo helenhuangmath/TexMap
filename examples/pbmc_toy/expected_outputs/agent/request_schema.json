@@ -1,0 +1,28 @@
+{
+  "name": "TexMap agentic annotation request",
+  "version": "0.1.0",
+  "natural_language_examples": [
+    "Annotate these cells and compare to terminal Tex.",
+    "Project my query sample into the exhaustion reference and summarize out-of-reference cells.",
+    "Export ML-ready embeddings and run the benchmark scoring harness."
+  ],
+  "orchestrated_steps": [
+    "harmonize_input",
+    "project_to_reference",
+    "transfer_annotations",
+    "score_pathways",
+    "export_ml_ready_assets",
+    "score_benchmark",
+    "summarize_interpretation"
+  ],
+  "structured_request": {
+    "task": "annotate_and_compare",
+    "reference_state": "terminal Tex",
+    "return": [
+      "tables",
+      "figures",
+      "web_report",
+      "json_summary"
+    ]
+  }
+}

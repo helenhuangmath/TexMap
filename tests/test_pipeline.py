@@ -17,9 +17,17 @@ class PipelineSmokeTest(unittest.TestCase):
             self.assertTrue((config.output.directory / "tables" / "pathway_scores.csv").exists())
             self.assertTrue((config.output.directory / "figures" / "integrated_umap.svg").exists())
             self.assertTrue((config.output.directory / "figures" / "pathway_heatmap.svg").exists())
+            self.assertTrue((config.output.directory / "agent" / "run_result.json").exists())
+            self.assertTrue((config.output.directory / "agent" / "interpretation.json").exists())
+            self.assertTrue((config.output.directory / "ml_ready" / "features.csv").exists())
+            self.assertTrue((config.output.directory / "foundation_models" / "adapter_manifest.json").exists())
+            self.assertTrue((config.output.directory / "benchmark" / "metrics.json").exists())
+            self.assertTrue((config.output.directory / "scalability" / "projection_plan.json").exists())
             html = report.read_text(encoding="utf-8")
             self.assertIn("../figures/integrated_umap.svg", html)
             self.assertIn("../figures/pathway_heatmap.svg", html)
+            self.assertIn("Agentic Workflow", html)
+            self.assertIn("Foundation Models", html)
 
 
 if __name__ == "__main__":

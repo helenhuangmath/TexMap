@@ -13,6 +13,12 @@ def write_report(config: TexMapConfig, paths: dict[str, Path]) -> Path:
     pathways = _typed_records(read_table(paths["tables"] / "pathway_scores.csv")) if (paths["tables"] / "pathway_scores.csv").exists() else []
     qc = _typed_records(read_table(paths["tables"] / "cell_qc.csv")) if (paths["tables"] / "cell_qc.csv").exists() else []
     figures = _figure_records(paths)
+    interpretation = _load_json(paths["agent"] / "interpretation.json")
+    agent_result = _load_json(paths["agent"] / "run_result.json")
+    ml_manifest = _load_json(paths["ml_ready"] / "manifest.json")
+    fm_manifest = _load_json(paths["foundation_models"] / "adapter_manifest.json")
+    benchmark_metrics = _load_json(paths["benchmark"] / "metrics.json")
+    scalability_plan = _load_json(paths["scalability"] / "projection_plan.json")
 
     payload = {
         "project": config.output.project_name,
@@ -21,6 +27,12 @@ def write_report(config: TexMapConfig, paths: dict[str, Path]) -> Path:
         "pathways": pathways,
         "qcSummary": _qc_summary(qc),
         "figures": figures,
+        "interpretation": interpretation,
+        "agentResult": agent_result,
+        "mlManifest": ml_manifest,
+        "foundationModelManifest": fm_manifest,
+        "benchmarkMetrics": benchmark_metrics,
+        "scalabilityPlan": scalability_plan,
     }
 
     out = paths["web"] / "index.html"
@@ -77,9 +89,19 @@ def _title_from_name(name: str) -> str:
     return name.replace("_", " ").replace("-", " ").title()
 
 
+def _load_json(path: Path) -> dict[str, object]:
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+
+
 def _html(payload: dict[str, object]) -> str:
     title = html.escape(str(payload["project"]))
     data = json.dumps(payload)
+    feature_cards = _feature_cards(payload)
     figure_cards = _figure_cards(payload.get("figures", []))
     return f"""<!doctype html>
 <html lang="en">
@@ -88,7 +110,7 @@ def _html(payload: dict[str, object]) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} | TexMap</title>
   <style>
-    :root {{ color-scheme: light; --ink: #1d2433; --muted: #5f6b7a; --line: #d8dee8; --query: #d94c36; --ref: #32746d; }}
+    :root {{ color-scheme: light; --ink: #1d2433; --muted: #5f6b7a; --line: #d8dee8; --query: #d94c36; --ref: #32746d; --accent: #255f85; }}
     body {{ margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: #f7f8fa; }}
     header {{ padding: 24px 32px 16px; background: #ffffff; border-bottom: 1px solid var(--line); }}
     h1 {{ margin: 0 0 6px; font-size: 28px; letter-spacing: 0; }}
@@ -96,6 +118,12 @@ def _html(payload: dict[str, object]) -> str:
     .report-grid {{ display: grid; grid-template-columns: minmax(360px, 1fr) 340px; gap: 18px; }}
     section, aside {{ background: #ffffff; border: 1px solid var(--line); border-radius: 8px; }}
     .gallery {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 18px; margin-bottom: 18px; }}
+    .feature-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 18px; }}
+    .feature {{ padding: 14px 16px; }}
+    .feature h2 {{ margin: 0 0 8px; font-size: 16px; letter-spacing: 0; }}
+    .feature p {{ margin: 0 0 10px; color: var(--muted); line-height: 1.35; font-size: 13px; }}
+    .feature a {{ color: var(--accent); font-size: 13px; text-decoration: none; }}
+    .feature strong {{ font-size: 22px; display: block; margin-bottom: 4px; }}
     .figure-card {{ overflow: hidden; }}
     .figure-card h2 {{ margin: 0; padding: 14px 16px 4px; font-size: 18px; letter-spacing: 0; }}
     .figure-card p {{ margin: 0; padding: 0 16px 12px; color: var(--muted); font-size: 13px; }}
@@ -123,6 +151,9 @@ def _html(payload: dict[str, object]) -> str:
     <div class="metrics" id="metrics"></div>
   </header>
   <main>
+    <div class="feature-grid">
+      {feature_cards}
+    </div>
     <div class="gallery">
       {figure_cards}
     </div>
@@ -217,3 +248,42 @@ def _figure_cards(figures: object) -> str:
       </section>"""
         )
     return "\n      ".join(cards)
+
+
+def _feature_cards(payload: dict[str, object]) -> str:
+    interpretation = payload.get("interpretation") if isinstance(payload.get("interpretation"), dict) else {}
+    agent = payload.get("agentResult") if isinstance(payload.get("agentResult"), dict) else {}
+    ml = payload.get("mlManifest") if isinstance(payload.get("mlManifest"), dict) else {}
+    fm = payload.get("foundationModelManifest") if isinstance(payload.get("foundationModelManifest"), dict) else {}
+    benchmark = payload.get("benchmarkMetrics") if isinstance(payload.get("benchmarkMetrics"), dict) else {}
+    scalability = payload.get("scalabilityPlan") if isinstance(payload.get("scalabilityPlan"), dict) else {}
+
+    summary = html.escape(str(interpretation.get("plain_language_summary", "AI-assisted interpretation will appear after analysis.")))
+    accuracy = benchmark.get("accuracy")
+    accuracy_text = "NA" if accuracy is None else f"{float(accuracy) * 100:.1f}%"
+    backbone_count = len(fm.get("supported_backbones", [])) if isinstance(fm.get("supported_backbones"), list) else 0
+    cells = scalability.get("observed_cells", "NA")
+    mode = html.escape(str(scalability.get("execution_mode", "not planned")))
+    agent_status = html.escape(str(agent.get("status", "pending")))
+    split_policy = html.escape(str(ml.get("split_policy", "not exported")))
+
+    cards = [
+        ("AI Interpretation", summary, "../agent/interpretation.json", ""),
+        ("Agentic Workflow", f"Structured run result is {agent_status}; outputs are self-describing for downstream agents.", "../agent/run_result.json", ""),
+        ("ML-Ready Export", f"Reference-aligned features, labels, and train/val/test splits. Split policy: {split_policy}.", "../ml_ready/manifest.json", ""),
+        ("Foundation Models", f"{backbone_count} optional adapter stubs: scGPT, Geneformer, scFoundation, and UCE.", "../foundation_models/adapter_manifest.json", ""),
+        ("Benchmark", "Held-out label scoring harness for exhaustion-state annotation.", "../benchmark/metrics.json", accuracy_text),
+        ("Scalability", f"{cells} observed cells. Recommended mode: {mode}.", "../scalability/projection_plan.json", ""),
+    ]
+    html_cards = []
+    for title, body, href, stat in cards:
+        stat_html = f"<strong>{html.escape(stat)}</strong>" if stat else ""
+        html_cards.append(
+            f"""<section class="feature">
+        <h2>{html.escape(title)}</h2>
+        {stat_html}
+        <p>{body}</p>
+        <a href="{html.escape(href)}">Open artifact</a>
+      </section>"""
+        )
+    return "\n      ".join(html_cards)

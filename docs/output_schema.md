@@ -48,6 +48,46 @@ Combined reference and query coordinates for visualization.
 
 Pathway activity table with cells as rows and pathways as columns.
 
+## agent/request_schema.json
+
+Machine-readable schema for natural-language and structured agent requests.
+
+## agent/run_result.json
+
+Self-describing, chainable output record for downstream agents or workflow managers.
+
+## agent/interpretation.json
+
+Plain-language interpretation with label counts, top pathway programs, and suggested next steps.
+
+## ml_ready/features.csv
+
+Reference-aligned feature matrix for model training and evaluation.
+
+## ml_ready/labels.csv
+
+Cell labels transferred from the reference map.
+
+## ml_ready/splits.csv
+
+Deterministic train/validation/test split assignments.
+
+## foundation_models/adapter_manifest.json
+
+Contract for optional scGPT, Geneformer, scFoundation, and UCE embedding adapters.
+
+## benchmark/predictions.csv
+
+Per-cell expected versus predicted annotation table when expected labels are available.
+
+## benchmark/metrics.json
+
+Benchmark summary, including exact-match accuracy when `expected_label` is provided in metadata.
+
+## scalability/projection_plan.json
+
+Batching and acceleration plan for out-of-core and GPU-ready projection workflows.
+
 ## figures/integrated_umap.svg
 
 Static SVG graph of reference and query cells in integrated map coordinates.
@@ -70,4 +110,4 @@ Static SVG heatmap of pathway scores.
 
 ## web/index.html
 
-HTML report with embedded figure panels, QC metrics, an interactive map canvas, pathway score controls, and links to downloadable static figures. It can be opened directly in a browser and shared with collaborators alongside the output tables and `figures/` folder.
+HTML report with AI-enabled feature cards, embedded figure panels, QC metrics, an interactive map canvas, pathway score controls, and links to downloadable static figures/artifacts. It can be opened directly in a browser and shared with collaborators alongside the output tables and `figures/` folder.

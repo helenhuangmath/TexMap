@@ -83,6 +83,7 @@ texmap prepare --config examples/pbmc_toy/config.yaml
 texmap analyze --config examples/pbmc_toy/config.yaml
 texmap integrate --config examples/pbmc_toy/config.yaml
 texmap pathways --config examples/pbmc_toy/config.yaml
+texmap ai --config examples/pbmc_toy/config.yaml
 texmap report --config examples/pbmc_toy/config.yaml
 ```
 
@@ -175,6 +176,22 @@ outputs/<run_name>/
   figures/
     integrated_umap.svg
     pathway_heatmap.svg
+  agent/
+    request_schema.json
+    run_result.json
+    interpretation.json
+  ml_ready/
+    features.csv
+    labels.csv
+    splits.csv
+    manifest.json
+  foundation_models/
+    adapter_manifest.json
+  benchmark/
+    predictions.csv
+    metrics.json
+  scalability/
+    projection_plan.json
   logs/
   web/
     index.html
@@ -208,11 +225,32 @@ Static SVG graph of the integrated reference map. Reference cells are green and 
 
 Static SVG heatmap of query-cell pathway activity. Rows are query cells and columns are pathways.
 
+### `agent/`
+
+Structured agentic workflow artifacts. `request_schema.json` documents natural-language and structured request patterns; `run_result.json` provides a chainable output contract; `interpretation.json` contains a plain-language AI-assisted summary.
+
+### `ml_ready/`
+
+Reference-aligned feature, label, and split files for downstream model training and evaluation.
+
+### `foundation_models/`
+
+Adapter manifest for optional scGPT, Geneformer, scFoundation, and UCE embedding backbones.
+
+### `benchmark/`
+
+Prediction table and metrics for the exhaustion-annotation scoring harness. If metadata includes `expected_label`, TexMap reports exact-match accuracy.
+
+### `scalability/`
+
+Projection plan describing batching, out-of-core, and GPU-acceleration hooks for atlas-scale runs.
+
 ### `web/index.html`
 
 A self-contained browser report showing:
 
 - A figure gallery with generated UMAP and pathway SVGs.
+- AI-enabled feature cards for agentic workflows, ML-ready exports, foundation-model adapters, benchmarks, scalability, and interpretation.
 - Query cells overlaid with reference cells.
 - QC summary metrics.
 - Pathway selector.

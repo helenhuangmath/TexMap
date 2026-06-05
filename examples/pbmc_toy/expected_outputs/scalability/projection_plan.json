@@ -1,0 +1,16 @@
+{
+  "project": "PBMC toy integration",
+  "observed_cells": 8,
+  "execution_mode": "single_process_core",
+  "planned_acceleration": [
+    "chunked out-of-core count loading",
+    "GPU embedding backbones when optional foundation-model adapters are enabled",
+    "batched nearest-neighbor projection",
+    "streaming report/table writers for million-cell cohorts"
+  ],
+  "batching_recommendation": {
+    "target_cells_per_chunk": 100000,
+    "preserve_cell_order": true,
+    "merge_outputs_by": "cell"
+  }
+}
