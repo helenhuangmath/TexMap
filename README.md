@@ -226,8 +226,16 @@ The toy PBMC example in `examples/pbmc_toy` contains:
 - A small reference embedding.
 - Reference cell-type labels.
 - Immune pathway gene sets.
+- Tracked expected figure outputs in `examples/pbmc_toy/expected_outputs/figures`.
 
 It is intentionally small so contributors can verify the full workflow quickly.
+
+Preview files:
+
+- `examples/pbmc_toy/counts.csv`
+- `examples/pbmc_toy/config.yaml`
+- `examples/pbmc_toy/expected_outputs/figures/integrated_umap.svg`
+- `examples/pbmc_toy/expected_outputs/figures/pathway_heatmap.svg`
 
 ## Development
 
