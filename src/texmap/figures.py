@@ -52,15 +52,15 @@ def write_integrated_umap(paths: dict[str, Path]) -> Path | None:
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Integrated UMAP">
   <rect width="100%" height="100%" fill="#fbfcfd"/>
-  <text x="{pad_left}" y="34" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1d2433">Integrated reference map</text>
-  <text x="{pad_left}" y="56" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#5f6b7a">Query cells are overlaid on reference coordinates</text>
+  <text x="{pad_left}" y="34" font-family="Arial" font-size="24" font-weight="700" fill="#1d2433">Integrated reference map</text>
+  <text x="{pad_left}" y="56" font-family="Arial" font-size="14" fill="#5f6b7a">Query cells are overlaid on reference coordinates</text>
   <line x1="{pad_left}" y1="{height - pad_bottom}" x2="{width - pad_right}" y2="{height - pad_bottom}" stroke="#9aa6b2"/>
   <line x1="{pad_left}" y1="{pad_top}" x2="{pad_left}" y2="{height - pad_bottom}" stroke="#9aa6b2"/>
-  <text x="{width / 2:.0f}" y="{height - 24}" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#5f6b7a">UMAP1</text>
-  <text x="22" y="{height / 2:.0f}" transform="rotate(-90 22 {height / 2:.0f})" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#5f6b7a">UMAP2</text>
+  <text x="{width / 2:.0f}" y="{height - 24}" font-family="Arial" font-size="14" fill="#5f6b7a">UMAP1</text>
+  <text x="22" y="{height / 2:.0f}" transform="rotate(-90 22 {height / 2:.0f})" font-family="Arial" font-size="14" fill="#5f6b7a">UMAP2</text>
   {"".join(body)}
-  <circle cx="{width - 172}" cy="32" r="5" fill="#32746d" fill-opacity="0.58"/><text x="{width - 158}" y="37" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#1d2433">reference</text>
-  <circle cx="{width - 82}" cy="32" r="7" fill="#d94c36" fill-opacity="0.92"/><text x="{width - 66}" y="37" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#1d2433">query</text>
+  <circle cx="{width - 172}" cy="32" r="5" fill="#32746d" fill-opacity="0.58"/><text x="{width - 158}" y="37" font-family="Arial" font-size="13" fill="#1d2433">reference</text>
+  <circle cx="{width - 82}" cy="32" r="7" fill="#d94c36" fill-opacity="0.92"/><text x="{width - 66}" y="37" font-family="Arial" font-size="13" fill="#1d2433">query</text>
 </svg>
 """
     out = paths["figures"] / "integrated_umap.svg"
@@ -92,7 +92,7 @@ def write_pathway_heatmap(paths: dict[str, Path]) -> Path | None:
         y = top_h + i * cell_h
         body.append(
             f'<text x="{label_w - 10}" y="{y + 20}" text-anchor="end" '
-            f'font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#1d2433">{html.escape(str(row.get("cell") or ""))}</text>'
+            f'font-family="Arial" font-size="12" fill="#1d2433">{html.escape(str(row.get("cell") or ""))}</text>'
         )
         for j, pathway in enumerate(pathways):
             x = label_w + j * cell_w
@@ -102,19 +102,19 @@ def write_pathway_heatmap(paths: dict[str, Path]) -> Path | None:
             )
             body.append(
                 f'<text x="{x + cell_w / 2:.1f}" y="{y + 20}" text-anchor="middle" '
-                f'font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#1d2433">{value:.2f}</text>'
+                f'font-family="Arial" font-size="11" fill="#1d2433">{value:.2f}</text>'
             )
     for j, pathway in enumerate(pathways):
         x = label_w + j * cell_w + cell_w / 2
         body.append(
             f'<text x="{x:.1f}" y="{top_h - 12}" transform="rotate(-36 {x:.1f} {top_h - 12})" '
-            f'text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#1d2433">{html.escape(pathway)}</text>'
+            f'text-anchor="start" font-family="Arial" font-size="12" fill="#1d2433">{html.escape(pathway)}</text>'
         )
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Pathway heatmap">
   <rect width="100%" height="100%" fill="#fbfcfd"/>
-  <text x="24" y="34" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1d2433">Pathway activity heatmap</text>
-  <text x="24" y="56" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#5f6b7a">Mean normalized expression across genes in each pathway</text>
+  <text x="24" y="34" font-family="Arial" font-size="24" font-weight="700" fill="#1d2433">Pathway activity heatmap</text>
+  <text x="24" y="56" font-family="Arial" font-size="14" fill="#5f6b7a">Mean normalized expression across genes in each pathway</text>
   {"".join(body)}
 </svg>
 """
