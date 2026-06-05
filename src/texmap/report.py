@@ -12,6 +12,7 @@ def write_report(config: TexMapConfig, paths: dict[str, Path]) -> Path:
     embedding = _typed_records(read_table(paths["tables"] / "integrated_embedding.csv")) if (paths["tables"] / "integrated_embedding.csv").exists() else []
     pathways = _typed_records(read_table(paths["tables"] / "pathway_scores.csv")) if (paths["tables"] / "pathway_scores.csv").exists() else []
     qc = _typed_records(read_table(paths["tables"] / "cell_qc.csv")) if (paths["tables"] / "cell_qc.csv").exists() else []
+    figures = _figure_records(paths)
 
     payload = {
         "project": config.output.project_name,
@@ -19,6 +20,7 @@ def write_report(config: TexMapConfig, paths: dict[str, Path]) -> Path:
         "pathwayColumns": [key for key in pathways[0].keys() if key != "cell"] if pathways else [],
         "pathways": pathways,
         "qcSummary": _qc_summary(qc),
+        "figures": figures,
     }
 
     out = paths["web"] / "index.html"
@@ -56,9 +58,29 @@ def _median(values: list[float]) -> float | None:
     return (values[mid - 1] + values[mid]) / 2
 
 
+def _figure_records(paths: dict[str, Path]) -> list[dict[str, str]]:
+    figure_dir = paths["figures"]
+    names = {
+        "integrated_umap.svg": ("Integrated UMAP", "Reference and query cells in shared map coordinates."),
+        "pathway_heatmap.svg": ("Pathway Heatmap", "Pathway activity scores across query cells."),
+    }
+    records = []
+    for path in sorted(figure_dir.glob("*")):
+        if path.suffix.lower() not in {".svg", ".png", ".jpg", ".jpeg"}:
+            continue
+        title, caption = names.get(path.name, (_title_from_name(path.stem), "Generated TexMap figure."))
+        records.append({"src": f"../figures/{path.name}", "title": title, "caption": caption})
+    return records
+
+
+def _title_from_name(name: str) -> str:
+    return name.replace("_", " ").replace("-", " ").title()
+
+
 def _html(payload: dict[str, object]) -> str:
     title = html.escape(str(payload["project"]))
     data = json.dumps(payload)
+    figure_cards = _figure_cards(payload.get("figures", []))
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -70,9 +92,16 @@ def _html(payload: dict[str, object]) -> str:
     body {{ margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: #f7f8fa; }}
     header {{ padding: 24px 32px 16px; background: #ffffff; border-bottom: 1px solid var(--line); }}
     h1 {{ margin: 0 0 6px; font-size: 28px; letter-spacing: 0; }}
-    main {{ display: grid; grid-template-columns: minmax(360px, 1fr) 340px; gap: 18px; padding: 18px 32px 32px; }}
+    main {{ padding: 18px 32px 32px; }}
+    .report-grid {{ display: grid; grid-template-columns: minmax(360px, 1fr) 340px; gap: 18px; }}
     section, aside {{ background: #ffffff; border: 1px solid var(--line); border-radius: 8px; }}
-    .plot-wrap {{ padding: 16px; min-height: 620px; }}
+    .gallery {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 18px; margin-bottom: 18px; }}
+    .figure-card {{ overflow: hidden; }}
+    .figure-card h2 {{ margin: 0; padding: 14px 16px 4px; font-size: 18px; letter-spacing: 0; }}
+    .figure-card p {{ margin: 0; padding: 0 16px 12px; color: var(--muted); font-size: 13px; }}
+    .figure-card a {{ display: block; color: inherit; text-decoration: none; }}
+    .figure-card img {{ display: block; width: 100%; height: auto; border-top: 1px solid var(--line); background: #ffffff; }}
+    .plot-wrap {{ padding: 16px; min-height: 560px; }}
     canvas {{ width: 100%; height: 560px; border: 1px solid var(--line); border-radius: 6px; background: #fbfcfd; }}
     aside {{ padding: 16px; }}
     .metrics {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }}
@@ -84,7 +113,7 @@ def _html(payload: dict[str, object]) -> str:
     th, td {{ text-align: left; border-bottom: 1px solid var(--line); padding: 7px 4px; }}
     .legend {{ display: flex; gap: 16px; align-items: center; margin-top: 10px; color: var(--muted); font-size: 13px; }}
     .dot {{ width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; }}
-    @media (max-width: 860px) {{ main {{ grid-template-columns: 1fr; padding: 12px; }} header {{ padding: 18px 12px; }} canvas {{ height: 420px; }} }}
+    @media (max-width: 860px) {{ main {{ padding: 12px; }} .report-grid {{ grid-template-columns: 1fr; }} .gallery {{ grid-template-columns: 1fr; }} header {{ padding: 18px 12px; }} canvas {{ height: 420px; }} }}
   </style>
 </head>
 <body>
@@ -94,18 +123,23 @@ def _html(payload: dict[str, object]) -> str:
     <div class="metrics" id="metrics"></div>
   </header>
   <main>
-    <section class="plot-wrap">
-      <canvas id="plot" width="1100" height="760"></canvas>
-      <div class="legend"><span><i class="dot" style="background: var(--ref)"></i>reference</span><span><i class="dot" style="background: var(--query)"></i>query</span></div>
-    </section>
-    <aside>
-      <label for="pathway">Pathway score</label>
-      <select id="pathway"></select>
-      <table>
-        <thead><tr><th>Cell</th><th>Nearest label</th><th>Score</th></tr></thead>
-        <tbody id="topCells"></tbody>
-      </table>
-    </aside>
+    <div class="gallery">
+      {figure_cards}
+    </div>
+    <div class="report-grid">
+      <section class="plot-wrap">
+        <canvas id="plot" width="1100" height="760"></canvas>
+        <div class="legend"><span><i class="dot" style="background: var(--ref)"></i>reference</span><span><i class="dot" style="background: var(--query)"></i>query</span></div>
+      </section>
+      <aside>
+        <label for="pathway">Pathway score</label>
+        <select id="pathway"></select>
+        <table>
+          <thead><tr><th>Cell</th><th>Nearest label</th><th>Score</th></tr></thead>
+          <tbody id="topCells"></tbody>
+        </table>
+      </aside>
+    </div>
   </main>
   <script>
     const TEXMAP = {data};
@@ -163,3 +197,23 @@ def _html(payload: dict[str, object]) -> str:
 </body>
 </html>
 """
+
+
+def _figure_cards(figures: object) -> str:
+    if not isinstance(figures, list) or not figures:
+        return """<section class="figure-card"><h2>No Static Figures Yet</h2><p>Run the report after figure generation to populate this gallery.</p></section>"""
+    cards = []
+    for figure in figures:
+        if not isinstance(figure, dict):
+            continue
+        src = html.escape(str(figure.get("src", "")))
+        title = html.escape(str(figure.get("title", "")))
+        caption = html.escape(str(figure.get("caption", "")))
+        cards.append(
+            f"""<section class="figure-card">
+        <h2>{title}</h2>
+        <p>{caption}</p>
+        <a href="{src}" download><img src="{src}" alt="{title}"></a>
+      </section>"""
+        )
+    return "\n      ".join(cards)

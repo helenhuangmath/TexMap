@@ -212,6 +212,7 @@ Static SVG heatmap of query-cell pathway activity. Rows are query cells and colu
 
 A self-contained browser report showing:
 
+- A figure gallery with generated UMAP and pathway SVGs.
 - Query cells overlaid with reference cells.
 - QC summary metrics.
 - Pathway selector.
@@ -234,6 +235,7 @@ Preview files:
 
 - `examples/pbmc_toy/counts.csv`
 - `examples/pbmc_toy/config.yaml`
+- `examples/pbmc_toy/expected_outputs/web/index.html`
 - `examples/pbmc_toy/expected_outputs/figures/integrated_umap.svg`
 - `examples/pbmc_toy/expected_outputs/figures/pathway_heatmap.svg`
 

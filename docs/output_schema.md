@@ -70,4 +70,4 @@ Static SVG heatmap of pathway scores.
 
 ## web/index.html
 
-Self-contained HTML report. It can be opened directly in a browser and shared with collaborators alongside the output tables.
+HTML report with embedded figure panels, QC metrics, an interactive map canvas, pathway score controls, and links to downloadable static figures. It can be opened directly in a browser and shared with collaborators alongside the output tables and `figures/` folder.

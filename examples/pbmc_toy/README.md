@@ -19,6 +19,8 @@ Example graph outputs are tracked in:
 expected_outputs/figures/
   integrated_umap.svg
   pathway_heatmap.svg
+expected_outputs/web/
+  index.html
 ```
 
 Regenerate them with:
@@ -31,4 +33,5 @@ Fresh outputs will be written to:
 
 ```text
 outputs/pbmc_toy/figures/
+outputs/pbmc_toy/web/index.html
 ```
