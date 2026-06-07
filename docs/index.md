@@ -1,4 +1,4 @@
-# TexMap
+# TexMap: A Universal Coordinate System for T Cell Exhaustion
 
 **A universal coordinate system for T-cell exhaustion** — an open-source reference atlas and
 computational framework for projection, interpretation, and mechanistic discovery across

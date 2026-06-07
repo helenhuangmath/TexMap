@@ -5,7 +5,7 @@ TexMap's core has **no required dependencies** (Python ≥ 3.9, standard library
 ## Install
 
 ```bash
-git clone https://github.com/your-org/TexMap.git
+git clone https://github.com/helenhuangmath/TexMap.git
 cd TexMap
 python -m pip install -e .
 ```

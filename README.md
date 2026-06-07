@@ -1,4 +1,4 @@
-# <img src="docs/figures/screenshot_explorer.png" alt="" width="0" height="0"> TexMap
+# <img src="docs/figures/screenshot_explorer.png" alt="" width="0" height="0"> TexMap: A Universal Coordinate System for T Cell Exhaustion
 
 <p align="center"><b>A universal coordinate system for T-cell exhaustion.</b><br>
 An open-source reference atlas + computational framework for projection, interpretation, and
@@ -40,18 +40,19 @@ texmap serve --config examples/tex_atlas/config.yaml
 # open http://127.0.0.1:8000
 ```
 
-## Real-data integration results
+## Example integration results
 
-A prototype TexMap reference built by integrating **97,419 CD8 T cells across 7 published
-studies** spanning scRNA-seq, multiome/TEA-seq, and LCMV / tumor / CAR-T models
-(Baxter 2023, Beltra 2023, Huang 2025, Giles 2022, Hakeem 2021, Park 2025, Chen 2019).
+The bundled TexMap reference demonstrates integration across a biologically styled CD8
+T-cell exhaustion atlas with mouse and human cells, multiple study labels, and continuous
+Tex axes. These figures are generated from the checked-in `examples/tex_atlas` reference so
+the README links resolve to reproducible example outputs.
 
 **Batch integration — cells co-embed by biology, not by study of origin:**
 
 ![UMAP colored by study / source batch](docs/figures/integration_umap_by_study.png)
 
-**Sample / condition structure** (naive, effector/Arm, chronic Cl13 time course, Tex, Tmem,
-Trecov, and CAR-T / Tox perturbations):
+**Cell-state structure** across naive/memory, effector, progenitor-exhausted, terminal,
+and proliferating states:
 
 ![UMAP colored by sample](docs/figures/integration_umap_by_sample.png)
 
@@ -66,8 +67,8 @@ the embedding and TexMap's axis definitions:
 | --- | --- |
 | ![Exhaustion markers](docs/figures/markers_exhaustion.png) | ![Effector markers](docs/figures/markers_effector.png) |
 
-Naive/memory markers (SELL, CCR7, LEF1, TCF7, IL7R, S1PR1, KLF2, BACH2, FOXO1) mark the
-right-hand islands; exhaustion markers (PDCD1, HAVCR2, LAG3, TOX, CTLA4, ICOS) and effector
+Naive/memory markers (SELL, CCR7, LEF1, TCF7, IL7R, SLAMF6, BACH2) mark the
+right-hand islands; exhaustion markers (PDCD1, HAVCR2, LAG3, TOX, TIGIT, ENTPD1) and effector
 markers (GZMB, PRF1, IFNG, KLRG1, CX3CR1, NKG7) partition the large chronic-infection
 manifold — the biological structure TexMap's continuous axes are designed to quantify.
 
@@ -564,7 +565,7 @@ If you use TexMap, please cite this repository:
   title  = {TexMap: a universal coordinate system for T-cell exhaustion},
   author = {TexMap contributors},
   year   = {2026},
-  url    = {https://github.com/<your-org>/TexMap}
+  url    = {https://github.com/helenhuangmath/TexMap}
 }
 ```
 

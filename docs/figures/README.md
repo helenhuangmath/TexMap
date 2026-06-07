@@ -1,16 +1,16 @@
 # TexMap figures
 
-Save the real-data integration figures here with these exact filenames so the links in the
-top-level `README.md` resolve:
+This directory contains screenshots and reproducible example integration figures used by
+the top-level `README.md` and documentation site.
 
 | Filename | Figure |
 | --- | --- |
-| `integration_umap_by_study.png` | UMAP colored by `source_batch` (7 studies) |
-| `integration_umap_by_sample.png` | UMAP colored by Sample (grouped palette, n=97,419 cells) |
-| `markers_naive.png` | UMAP — naive markers (SELL, CCR7, LEF1, TCF7, IL7R, S1PR1) |
-| `markers_memory.png` | UMAP — memory markers (TCF7, IL7R, BCL2, KLF2, BACH2, FOXO1) |
-| `markers_exhaustion.png` | UMAP — exhaustion markers (PDCD1, HAVCR2, LAG3, TOX, CTLA4, ICOS) |
+| `integration_umap_by_study.png` | UMAP colored by study label in `examples/tex_atlas/reference_metadata.csv` |
+| `integration_umap_by_sample.png` | UMAP colored by Tex state in `examples/tex_atlas/reference_metadata.csv` |
+| `markers_naive.png` | UMAP — naive markers (SELL, CCR7, LEF1, TCF7, IL7R, BACH2) |
+| `markers_memory.png` | UMAP — memory/stem markers (TCF7, IL7R, LEF1, SELL, SLAMF6, BACH2) |
+| `markers_exhaustion.png` | UMAP — exhaustion markers (PDCD1, HAVCR2, LAG3, TOX, TIGIT, ENTPD1) |
 | `markers_effector.png` | UMAP — effector markers (GZMB, PRF1, IFNG, KLRG1, CX3CR1, NKG7) |
 
-These correspond to the integration of 97,419 CD8 T cells across 7 published studies
-(Baxter 2023, Beltra 2023, Huang 2025, Giles 2022, Hakeem 2021, Park 2025, Chen 2019).
+The integration and marker figures are generated from the checked-in bundled atlas under
+`examples/tex_atlas`, so they can be regenerated without external data access.

@@ -1,7 +1,7 @@
-site_name: TexMap
+site_name: "TexMap: A Universal Coordinate System for T Cell Exhaustion"
 site_description: A universal coordinate system for T-cell exhaustion
 docs_dir: docs
-repo_url: https://github.com/your-org/TexMap
+repo_url: https://github.com/helenhuangmath/TexMap
 theme:
   name: material
   palette:
