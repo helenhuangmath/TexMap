@@ -80,24 +80,6 @@ manifold — the biological structure TexMap's continuous axes are designed to q
 
 </details>
 
-## How TexMap addresses the project goals
-
-| Goal (note.txt) | Where it lives |
-| --- | --- |
-| 1. Harmonize input, standard sc analysis, integrate into the map | `texmap.pipeline` + `texmap.projection` (QC → normalize → axis scoring → kNN transfer) |
-| 2. Web page to explore where user data lands on the integrated UMAP | `texmap serve` → interactive explorer (`src/texmap/server.py`, `src/texmap/webapp/`) |
-| 3. Pathway analysis + biological meaning + AI agent suggestions | `texmap.pathways`, `texmap.tex_axes`, `texmap.texagent` (offline + optional live LLM) |
-| 4. Integrate and view scATAC / epigenetic data | `texmap.multimodal` (peak→gene-activity, projected onto the shared map) |
-| 5. Link epigenetic resources for deeper insight | `ChromatinFixation` axis + regulatory-program scaffolding in `tex_axes`/`pathways` |
-| 6. Cross-species integration | Axis-space projection is species-agnostic; atlas carries a `species` field |
-| 7. Bulk-RNA integration | `texmap.multimodal.project_bulk_rna` + bulk projection in the explorer |
-| 8. Query CELLxGENE + cellxgene-style interface (OS4Science) | `texmap.cellxgene` (live CZ Discover API + offline catalog) + color-by-gene, box-selection→composition, and Discover deep-links in the explorer |
-
-The continuous-axis projection (Module 2, the "killer feature" in note.txt) is real and
-runnable today. The foundation-model backbone (Module 3) and the 100+ study atlas (Module
-1) are scaffolded with adapter manifests and a synthetic-but-biologically-styled demo atlas
-you can replace with real data — see [docs/roadmap.md](docs/roadmap.md).
-
 ## Interactive Web Explorer
 
 `texmap serve` starts a dependency-free web application (Python stdlib only) with a JSON API:
