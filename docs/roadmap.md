@@ -19,14 +19,6 @@ goals and what is implemented today.
 - **Multimodal projection** (`texmap.multimodal`) — scATAC peak→gene-activity and bulk RNA
   projected onto the shared map.
 
-## Next: replace the demo atlas with a real Module-1 atlas
-
-The demo atlas is generated deterministically and is a stand-in. Production work: aggregate
-100+ public CD8-exhaustion studies (scRNA / scATAC / multiome / CUT&Tag / ChIP-seq / bulk /
-perturb-seq) across mouse, human, chronic infection, tumor, and CAR-T; learn the axes from a
-foundation-model backbone (scGPT / Geneformer / scFoundation / UCE — adapter manifests are
-already emitted under `foundation_models/`) rather than fixed marker programs.
-
 ## scRNA-seq
 
 - Add AnnData/Scanpy-native I/O.

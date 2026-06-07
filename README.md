@@ -555,13 +555,3 @@ If you use TexMap, please cite this repository:
   url    = {https://github.com/helenhuangmath/TexMap}
 }
 ```
-
-## Contributing
-
-Contributions are welcome — new reference recipes, integration-method adapters, epigenetic
-resource links, and tutorials especially. Please open an issue to discuss substantial changes,
-run `python -m unittest discover -s tests` before submitting, and keep the core dependency-free.
-
-## Repository Status
-
-TexMap is alpha software. The current implementation is a clear, runnable foundation; production biological analysis should validate normalization, integration, label transfer, and pathway choices for the specific dataset and reference map.
