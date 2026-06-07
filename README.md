@@ -42,6 +42,9 @@ texmap serve --config examples/tex_atlas/config.yaml
 
 ## Example integration results
 
+<details>
+<summary>Show integration figures</summary>
+
 The bundled TexMap reference demonstrates integration across a biologically styled CD8
 T-cell exhaustion atlas with mouse and human cells, multiple study labels, and continuous
 Tex axes. These figures are generated from the checked-in `examples/tex_atlas` reference so
@@ -74,6 +77,8 @@ manifold — the biological structure TexMap's continuous axes are designed to q
 
 > Figure files live in [docs/figures/](docs/figures/); see the folder README for the exact
 > filenames if you regenerate them.
+
+</details>
 
 ## How TexMap addresses the project goals
 
