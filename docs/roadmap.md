@@ -1,6 +1,31 @@
 # TexMap Roadmap
 
-TexMap is designed as a modular reference-mapping platform. The current repository contains the minimal runnable core; this roadmap records the larger goals.
+TexMap is designed as a modular reference-mapping platform. This roadmap records the larger
+goals and what is implemented today.
+
+## Implemented now
+
+- **Continuous exhaustion axes** (`texmap.tex_axes`) — Exhaustion, Stemness, Terminality,
+  Cytotoxicity, Proliferation, ChromatinFixation, scored from curated marker programs.
+- **Reference projection engine** (`texmap.projection`) — axis-space kNN transfer that places
+  any query (sc / bulk / ATAC-derived) into the shared coordinate system with confidence and
+  state composition. This is Module 2 from the project notes.
+- **Interactive web explorer** (`texmap serve`) — pan/zoom atlas, color by axis / metadata /
+  pathway, upload-and-project, per-cell detail, and a natural-language agent.
+- **TexAgent** (`texmap.texagent`) — grounded offline NL engine with optional live LLM
+  backend when a supported provider key is present.
+- **Demo atlas generator** (`texmap demo`) — 1,200-cell synthetic-but-biologically-styled CD8
+  exhaustion atlas across mouse/human, single-cell and bulk, so the explorer runs immediately.
+- **Multimodal projection** (`texmap.multimodal`) — scATAC peak→gene-activity and bulk RNA
+  projected onto the shared map.
+
+## Next: replace the demo atlas with a real Module-1 atlas
+
+The demo atlas is generated deterministically and is a stand-in. Production work: aggregate
+100+ public CD8-exhaustion studies (scRNA / scATAC / multiome / CUT&Tag / ChIP-seq / bulk /
+perturb-seq) across mouse, human, chronic infection, tumor, and CAR-T; learn the axes from a
+foundation-model backbone (scGPT / Geneformer / scFoundation / UCE — adapter manifests are
+already emitted under `foundation_models/`) rather than fixed marker programs.
 
 ## scRNA-seq
 

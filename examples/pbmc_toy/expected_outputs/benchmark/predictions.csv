@@ -1,9 +1,0 @@
-cell,expected_label,predicted_label,correct
-query_T_1,CD4 T cell,CD4 T cell,True
-query_T_2,CD4 T cell,CD4 T cell,True
-query_NK_1,NK cell,NK cell,True
-query_NK_2,NK cell,NK cell,True
-query_Mono_1,Monocyte,Monocyte,True
-query_Mono_2,Monocyte,Monocyte,True
-query_B_1,B cell,B cell,True
-query_B_2,B cell,B cell,True

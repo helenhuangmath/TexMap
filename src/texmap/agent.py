@@ -14,14 +14,14 @@ def write_agent_outputs(config: TexMapConfig, paths: dict[str, Path]) -> list[Pa
         "natural_language_examples": [
             "Annotate these cells and compare to terminal Tex.",
             "Project my query sample into the exhaustion reference and summarize out-of-reference cells.",
-            "Export ML-ready embeddings and run the benchmark scoring harness.",
+            "Export the reference-aligned feature matrix and run the benchmark scoring harness.",
         ],
         "orchestrated_steps": [
             "harmonize_input",
             "project_to_reference",
             "transfer_annotations",
             "score_pathways",
-            "export_ml_ready_assets",
+            "export_feature_matrix",
             "score_benchmark",
             "summarize_interpretation",
         ],
@@ -39,7 +39,7 @@ def write_agent_outputs(config: TexMapConfig, paths: dict[str, Path]) -> list[Pa
             "web_report": "web/index.html",
             "integrated_embedding": "tables/integrated_embedding.csv",
             "pathway_scores": "tables/pathway_scores.csv",
-            "ml_ready_manifest": "ml_ready/manifest.json",
+            "feature_matrix_manifest": "feature_matrix/manifest.json",
             "benchmark_metrics": "benchmark/metrics.json",
         },
         "chainable_result": {
@@ -80,7 +80,7 @@ def write_interpretation(config: TexMapConfig, paths: dict[str, Path]) -> Path:
         "suggested_next_steps": [
             "Review query cells with low pathway specificity or missing nearest-reference labels.",
             "Compare terminal Tex, memory, effector, and naive marker programs in the figure gallery.",
-            "Use the ML-ready export for downstream model training or independent validation.",
+            "Use the feature-matrix export for downstream model training or independent validation.",
         ],
     }
     out = paths["agent"] / "interpretation.json"

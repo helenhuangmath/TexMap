@@ -38,16 +38,33 @@ def write_integrated_umap(paths: dict[str, Path]) -> Path | None:
     def sy(value: object) -> float:
         return height - pad_bottom - (float(value) - min_y) / ((max_y - min_y) or 1.0) * (height - pad_top - pad_bottom)
 
+    palette = ["#32746d", "#d94c36", "#255f85", "#d9822b", "#7c6a0a", "#218380"]
+    sources = sorted({str(row.get("source") or "unknown") for row in points})
+    source_colors = {source: palette[i % len(palette)] for i, source in enumerate(sources)}
+    if "reference" in source_colors:
+        source_colors["reference"] = "#32746d"
+    if "query" in source_colors:
+        source_colors["query"] = "#d94c36"
+
     body = []
     for row in points:
         source = str(row.get("source") or "")
-        color = "#d94c36" if source == "query" else "#32746d"
-        radius = 7 if source == "query" else 5
-        opacity = 0.92 if source == "query" else 0.58
+        color = source_colors.get(source, "#5f6b7a")
+        radius = 5 if source == "reference" else 7
+        opacity = 0.58 if source == "reference" else 0.92
         label = html.escape(str(row.get("predicted_label") or row.get("cell") or ""))
         body.append(
             f'<circle cx="{sx(row["UMAP1"]):.2f}" cy="{sy(row["UMAP2"]):.2f}" r="{radius}" '
             f'fill="{color}" fill-opacity="{opacity}"><title>{label}</title></circle>'
+        )
+    legend = []
+    for i, source in enumerate(sources):
+        x = width - 210
+        y = 28 + i * 20
+        color = source_colors.get(source, "#5f6b7a")
+        legend.append(
+            f'<circle cx="{x}" cy="{y}" r="5" fill="{color}" fill-opacity="0.88"/>'
+            f'<text x="{x + 12}" y="{y + 5}" font-family="Arial" font-size="12" fill="#1d2433">{html.escape(source)}</text>'
         )
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="Integrated UMAP">
@@ -59,8 +76,7 @@ def write_integrated_umap(paths: dict[str, Path]) -> Path | None:
   <text x="{width / 2:.0f}" y="{height - 24}" font-family="Arial" font-size="14" fill="#5f6b7a">UMAP1</text>
   <text x="22" y="{height / 2:.0f}" transform="rotate(-90 22 {height / 2:.0f})" font-family="Arial" font-size="14" fill="#5f6b7a">UMAP2</text>
   {"".join(body)}
-  <circle cx="{width - 172}" cy="32" r="5" fill="#32746d" fill-opacity="0.58"/><text x="{width - 158}" y="37" font-family="Arial" font-size="13" fill="#1d2433">reference</text>
-  <circle cx="{width - 82}" cy="32" r="7" fill="#d94c36" fill-opacity="0.92"/><text x="{width - 66}" y="37" font-family="Arial" font-size="13" fill="#1d2433">query</text>
+  {"".join(legend)}
 </svg>
 """
     out = paths["figures"] / "integrated_umap.svg"

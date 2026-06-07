@@ -1,9 +1,0 @@
-cell,sample,condition,expected_label
-query_T_1,demo,control,CD4 T cell
-query_T_2,demo,control,CD4 T cell
-query_NK_1,demo,stimulated,NK cell
-query_NK_2,demo,stimulated,NK cell
-query_Mono_1,demo,stimulated,Monocyte
-query_Mono_2,demo,stimulated,Monocyte
-query_B_1,demo,control,B cell
-query_B_2,demo,control,B cell

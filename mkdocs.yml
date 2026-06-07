@@ -1,0 +1,52 @@
+site_name: TexMap
+site_description: A universal coordinate system for T-cell exhaustion
+docs_dir: docs
+repo_url: https://github.com/your-org/TexMap
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+    - toc.integrate
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - tables
+  - toc:
+      permalink: true
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Quick start: quickstart.md
+  - Tutorials:
+      - Overview: tutorials/index.md
+      - Getting started: tutorials/getting-started.md
+      - Project your data: tutorials/project-your-data.md
+      - Continuous exhaustion axes: tutorials/continuous-axes.md
+      - Integration methods & TexBench: tutorials/integration-methods.md
+      - Regulatory networks: tutorials/regulatory-network.md
+      - Clinical translation: tutorials/clinical-translation.md
+      - Multiomic & cross-species: tutorials/multiomic-crossspecies.md
+      - Query CELLxGENE: tutorials/cellxgene.md
+      - Build a reference from real data: tutorials/build-reference.md
+      - TexAgent (AI agent): tutorials/texagent.md
+      - TexAPI (programmatic): tutorials/texapi.md
+  - Reference:
+      - Output schema: output_schema.md
+      - Roadmap: roadmap.md

@@ -1,0 +1,11 @@
+cell,modality,expected_label
+ATAC_00,scATAC,Tex-terminal
+ATAC_01,scATAC,Tex-terminal
+ATAC_02,scATAC,Tex-terminal
+ATAC_03,scATAC,Tex-terminal
+ATAC_04,scATAC,Tex-terminal
+ATAC_05,scATAC,Tpex (progenitor exhausted)
+ATAC_06,scATAC,Tpex (progenitor exhausted)
+ATAC_07,scATAC,Tpex (progenitor exhausted)
+ATAC_08,scATAC,Effector
+ATAC_09,scATAC,Effector

@@ -33,6 +33,23 @@ class AnalysisConfig:
 
 
 @dataclass
+class ScATACConfig:
+    peaks: Path | None = None
+    metadata: Path | None = None
+    peak_gene_links: Path | None = None
+    format: str = "csv"
+    enabled: bool = False
+
+
+@dataclass
+class BulkRNAConfig:
+    expression: Path | None = None
+    metadata: Path | None = None
+    format: str = "csv"
+    enabled: bool = False
+
+
+@dataclass
 class OutputConfig:
     directory: Path = Path("outputs/texmap_run")
     project_name: str = "TexMap project"
@@ -43,6 +60,8 @@ class TexMapConfig:
     input: InputConfig
     reference: ReferenceConfig = field(default_factory=ReferenceConfig)
     analysis: AnalysisConfig = field(default_factory=AnalysisConfig)
+    scatac: ScATACConfig = field(default_factory=ScATACConfig)
+    bulk_rna: BulkRNAConfig = field(default_factory=BulkRNAConfig)
     output: OutputConfig = field(default_factory=OutputConfig)
 
 
@@ -66,6 +85,8 @@ def load_config(path: str | Path) -> TexMapConfig:
 
     reference_raw = raw.get("reference", {})
     analysis_raw = raw.get("analysis", {})
+    scatac_raw = raw.get("scatac", {})
+    bulk_rna_raw = raw.get("bulk_rna", {})
     output_raw = raw.get("output", {})
 
     return TexMapConfig(
@@ -89,6 +110,19 @@ def load_config(path: str | Path) -> TexMapConfig:
             n_neighbors=int(analysis_raw.get("n_neighbors", 15)),
             random_state=int(analysis_raw.get("random_state", 13)),
             pathway_sets=_resolve(base, analysis_raw.get("pathway_sets")),
+        ),
+        scatac=ScATACConfig(
+            peaks=_resolve(base, scatac_raw.get("peaks")),
+            metadata=_resolve(base, scatac_raw.get("metadata")),
+            peak_gene_links=_resolve(base, scatac_raw.get("peak_gene_links")),
+            format=scatac_raw.get("format", "csv"),
+            enabled=bool(scatac_raw.get("enabled", bool(scatac_raw.get("peaks")))),
+        ),
+        bulk_rna=BulkRNAConfig(
+            expression=_resolve(base, bulk_rna_raw.get("expression")),
+            metadata=_resolve(base, bulk_rna_raw.get("metadata")),
+            format=bulk_rna_raw.get("format", "csv"),
+            enabled=bool(bulk_rna_raw.get("enabled", bool(bulk_rna_raw.get("expression")))),
         ),
         output=OutputConfig(
             directory=_resolve(base, output_raw.get("directory", "outputs/texmap_run")),

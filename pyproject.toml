@@ -35,6 +35,10 @@ analysis = [
 web = [
   "plotly>=5.18"
 ]
+agent = []
+docs = [
+  "mkdocs-material>=9.5"
+]
 dev = [
   "pytest>=7.0"
 ]
@@ -44,6 +48,9 @@ texmap = "texmap.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+texmap = ["webapp/*.html", "webapp/*.css", "webapp/*.js"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

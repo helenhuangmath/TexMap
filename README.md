@@ -1,8 +1,199 @@
-# TexMap
+# <img src="docs/figures/screenshot_explorer.png" alt="" width="0" height="0"> TexMap
 
-TexMap is an open, extensible toolkit for integrating user single-cell datasets into a reference map, producing interpretable biological summaries, and generating a lightweight web report where users can inspect where their cells land.
+<p align="center"><b>A universal coordinate system for T-cell exhaustion.</b><br>
+An open-source reference atlas + computational framework for projection, interpretation, and
+mechanistic discovery across single-cell, bulk, multiomic, and cross-species data.</p>
 
-The current release is an alpha scaffold designed to be immediately runnable on toy data and straightforward to extend for production-scale scRNA-seq, scATAC-seq, scGPT embeddings, pathway analysis, epigenetic resources, and cross-species mapping.
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/python-3.9%2B-blue">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
+  <img alt="Tests" src="https://img.shields.io/badge/tests-31%20passing-brightgreen">
+  <img alt="Dependencies" src="https://img.shields.io/badge/core-zero%20dependencies-orange">
+  <img alt="Status" src="https://img.shields.io/badge/status-alpha-yellow">
+  <a href="docs/tutorials/index.md"><img alt="Docs" src="https://img.shields.io/badge/docs-tutorials-8A2BE2"></a>
+</p>
+
+<p align="center">
+  <img src="docs/figures/screenshot_explorer.png" alt="TexMap interactive explorer" width="90%">
+  <br><em>The TexMap explorer — project data into the exhaustion coordinate system and explore it interactively.</em>
+</p>
+
+📖 **Documentation & tutorials:** [docs/tutorials/index.md](docs/tutorials/index.md) ·
+🚀 **Quick start:** [QUICK_START.md](QUICK_START.md) ·
+🧬 **Goal & vision:** below
+
+Instead of forcing every dataset into incompatible discrete cluster labels (one lab's
+"progenitor Tex" is another's "stem-like Tex"), TexMap places every cell on a small set of
+**continuous, interpretable biological axes** — Exhaustion, Stemness, Terminality,
+Cytotoxicity, Proliferation, and a Chromatin-fixation proxy — and projects any new dataset
+into that shared space.
+
+TexMap ships with a real **interactive web explorer** (no build step, no heavy
+dependencies) where you can browse the integrated atlas, upload your own data to see where
+it lands, color by continuous axes or pathway programs, and ask a natural-language agent
+about exhaustion biology.
+
+```bash
+# Generate the demo CD8 exhaustion atlas and launch the explorer
+texmap demo
+texmap serve --config examples/tex_atlas/config.yaml
+# open http://127.0.0.1:8000
+```
+
+## Real-data integration results
+
+A prototype TexMap reference built by integrating **97,419 CD8 T cells across 7 published
+studies** spanning scRNA-seq, multiome/TEA-seq, and LCMV / tumor / CAR-T models
+(Baxter 2023, Beltra 2023, Huang 2025, Giles 2022, Hakeem 2021, Park 2025, Chen 2019).
+
+**Batch integration — cells co-embed by biology, not by study of origin:**
+
+![UMAP colored by study / source batch](docs/figures/integration_umap_by_study.png)
+
+**Sample / condition structure** (naive, effector/Arm, chronic Cl13 time course, Tex, Tmem,
+Trecov, and CAR-T / Tox perturbations):
+
+![UMAP colored by sample](docs/figures/integration_umap_by_sample.png)
+
+**Canonical marker programs localize as expected on the integrated manifold**, validating
+the embedding and TexMap's axis definitions:
+
+| Naive | Memory |
+| --- | --- |
+| ![Naive markers](docs/figures/markers_naive.png) | ![Memory markers](docs/figures/markers_memory.png) |
+
+| Exhaustion | Effector |
+| --- | --- |
+| ![Exhaustion markers](docs/figures/markers_exhaustion.png) | ![Effector markers](docs/figures/markers_effector.png) |
+
+Naive/memory markers (SELL, CCR7, LEF1, TCF7, IL7R, S1PR1, KLF2, BACH2, FOXO1) mark the
+right-hand islands; exhaustion markers (PDCD1, HAVCR2, LAG3, TOX, CTLA4, ICOS) and effector
+markers (GZMB, PRF1, IFNG, KLRG1, CX3CR1, NKG7) partition the large chronic-infection
+manifold — the biological structure TexMap's continuous axes are designed to quantify.
+
+> Figure files live in [docs/figures/](docs/figures/); see the folder README for the exact
+> filenames if you regenerate them.
+
+## How TexMap addresses the project goals
+
+| Goal (note.txt) | Where it lives |
+| --- | --- |
+| 1. Harmonize input, standard sc analysis, integrate into the map | `texmap.pipeline` + `texmap.projection` (QC → normalize → axis scoring → kNN transfer) |
+| 2. Web page to explore where user data lands on the integrated UMAP | `texmap serve` → interactive explorer (`src/texmap/server.py`, `src/texmap/webapp/`) |
+| 3. Pathway analysis + biological meaning + AI agent suggestions | `texmap.pathways`, `texmap.tex_axes`, `texmap.texagent` (offline + optional live LLM) |
+| 4. Integrate and view scATAC / epigenetic data | `texmap.multimodal` (peak→gene-activity, projected onto the shared map) |
+| 5. Link epigenetic resources for deeper insight | `ChromatinFixation` axis + regulatory-program scaffolding in `tex_axes`/`pathways` |
+| 6. Cross-species integration | Axis-space projection is species-agnostic; atlas carries a `species` field |
+| 7. Bulk-RNA integration | `texmap.multimodal.project_bulk_rna` + bulk projection in the explorer |
+| 8. Query CELLxGENE + cellxgene-style interface (OS4Science) | `texmap.cellxgene` (live CZ Discover API + offline catalog) + color-by-gene, box-selection→composition, and Discover deep-links in the explorer |
+
+The continuous-axis projection (Module 2, the "killer feature" in note.txt) is real and
+runnable today. The foundation-model backbone (Module 3) and the 100+ study atlas (Module
+1) are scaffolded with adapter manifests and a synthetic-but-biologically-styled demo atlas
+you can replace with real data — see [docs/roadmap.md](docs/roadmap.md).
+
+## Interactive Web Explorer
+
+`texmap serve` starts a dependency-free web application (Python stdlib only) with a JSON API:
+
+| Route | Purpose |
+| --- | --- |
+| `GET /` | Single-page atlas explorer |
+| `GET /api/atlas` | Reference cells: coordinates, continuous axes, metadata |
+| `POST /api/project` | Upload a counts CSV → project into the Tex coordinate map |
+| `POST /api/agent` | Ask TexAgent a natural-language question |
+| `GET /api/cellxgene/search` | Search CZ CELLxGENE Discover for exhaustion datasets |
+| `GET /api/regulatory[?gene=]` | Recovered TF→target regulatory network (or a gene's sub-network) |
+| `GET /api/accuracy` | Cell-state projection accuracy (leave-one-out on the atlas) |
+| `GET /api/clinical?predictor=` | Clinical-translation metrics (AUROC / C-index / hazard ratio) |
+| `GET /api/methods` | Integration methods + query modes (with backend availability) |
+| `GET /api/texbench` | TexBench dashboard data (accuracy, clinical, method availability) |
+
+`POST /api/project` accepts `X-Method` and `X-Mode` headers to choose the integration method
+and query mode.
+
+In the browser you can: pan/zoom the atlas, color by any continuous axis / cell metadata /
+pathway program / **individual gene** (cellxgene-style), toggle reference vs. your projected
+cells, hover/click for per-cell detail, **shift-drag to select a region** and read its live
+state composition, upload a counts matrix (or use the demo query) and watch it land with a
+state-composition breakdown, and chat with TexAgent. With a configured live LLM key, TexAgent
+answers grounded on the atlas; otherwise it uses a grounded offline rule-based engine.
+
+### CELLxGENE integration (OS4Science)
+
+TexMap connects to the broader open-science ecosystem rather than being a standalone island.
+The **Query CELLxGENE** panel searches the public [CZ CELLxGENE Discover](https://cellxgene.cziscience.com/)
+Curation API for exhaustion-relevant datasets and deep-links each result into the cellxgene
+Explorer, so you can find a reference dataset, inspect it in cellxgene, and bring it back to
+project into the TexMap coordinate system. When offline, it falls back to a curated catalog
+of landmark CD8-exhaustion studies. The explorer itself adopts cellxgene's interaction model
+(color-by-gene, region selection → composition) so it is familiar to that community — which
+is exactly the reusable, interoperable infrastructure OS4Science is meant to fund.
+
+## Continuous Exhaustion Coordinates
+
+`texmap.tex_axes` scores every cell on continuous 0–1 axes from curated CD8-exhaustion
+marker programs, plus a derived discrete `tex_state` for convenience:
+
+| Axis | Meaning |
+| --- | --- |
+| Exhaustion | Memory ←→ Exhaustion (inhibitory-receptor / TOX program) |
+| Stemness | Differentiated ←→ Stem/progenitor (TCF7 / SELL / IL7R) |
+| Terminality | Plastic ←→ Terminal effector |
+| Cytotoxicity | Quiescent ←→ Cytotoxic |
+| Proliferation | Resting ←→ Proliferative |
+| ChromatinFixation | Chromatin-open ←→ Chromatin-locked (refined with ATAC) |
+
+These are written to `tables/tex_axes.csv` and merged into the integrated embedding so the
+web explorer can color by them.
+
+## Analysis modules
+
+- **Integration engine** (`texmap.integration`, `GET /api/methods`) — pick a method
+  (**scVI** default · scANVI · scGPT zero-shot · scGPT fine-tune · Harmony · Seurat) and a
+  **query mode** (integrate all · project new query · label transfer · find nearest Tex
+  states · compare conditions). TexMap detects whether each backend library is installed and
+  transparently falls back to its dependency-free axis-space projection engine (and tells you
+  in the result `note`). Method/mode are chosen in the **Project your data** panel.
+- **TexBench** — the home-page button opens a benchmark dashboard: reference size, cell-state
+  projection accuracy, clinical AUROC/hazard-ratio, and which integration backends are
+  available (`GET /api/texbench`).
+- **Regulatory-network recovery** (`texmap.regulatory`, `GET /api/regulatory`) — recovers a
+  TF→target network from atlas co-expression (GENIE3/SCENIC-style) and groups edges into
+  exhaustion programs. On the demo atlas it recovers e.g. TOX→PDCD1/LAG3/TIGIT (the
+  inhibitory-receptor program) and TBX21⊣TOX. View it as a graph in the explorer.
+- **Cell-state projection accuracy** (`texmap.evaluation`, `GET /api/accuracy`) — leave-one-out
+  kNN label recovery in axis space → accuracy, macro-F1, per-class P/R/F1, confusion matrix.
+- **Clinical translation benchmark** (`texmap.clinical`, `GET /api/clinical`) — does a Tex
+  predictor (e.g. Stemness, Exhaustion) predict outcome? Computes **AUROC** (ICB response /
+  infection severity / CAR-T persistence), **concordance index** and a single-covariate Cox
+  **hazard ratio** with Wald p-value (survival). All implemented from scratch, no numpy.
+- **Multiomic & cross-species mapping** — scATAC peaks → gene activity and bulk RNA both
+  project onto the shared map (`tables/scatac_projection.csv`, `bulk_rna_projection.csv`);
+  axis-space projection is species-agnostic, so a mouse-cased query harmonizes onto the atlas
+  (`examples/tex_atlas/crossspecies_mouse_query.csv`).
+- **TexAPI** (`texmap.TexMap`, `texmap.TexAPIClient`) — in-process Python API and an HTTP
+  client so other programs can project data and run analyses.
+- **Real-time TexAgent** (`texmap.texagent`) — a **tool-using agent**, not just a chatbot. With
+  an LLM key (Gemini / OpenAI, free-first auto-detection) it runs a ReAct loop, calling
+  real tools (`atlas_composition`, `axis_markers`, `regulators_of`, `projection_accuracy`,
+  `clinical_benchmark`, `search_cellxgene`, `summarize_query`) and emitting UI actions that
+  drive the explorer (recolor by axis/gene, open the network). Offline, it falls back to a
+  grounded single-step engine that still drives the UI. Set `GEMINI_API_KEY` (free) /
+  `OPENAI_API_KEY` to enable the full loop.
+
+### Feature gallery
+
+| Regulatory network (STRING-style) | TexBench dashboard | TexAPI reference |
+| :---: | :---: | :---: |
+| [![Regulatory network](docs/figures/screenshot_regulatory_network.png)](docs/figures/screenshot_regulatory_network.png) | [![TexBench](docs/figures/screenshot_texbench.png)](docs/figures/screenshot_texbench.png) | [![TexAPI](docs/figures/screenshot_texapi.png)](docs/figures/screenshot_texapi.png) |
+| TF→target network recovered from co-expression, grouped into exhaustion programs | Projection accuracy, clinical metrics, and integration-method availability | REST + Python API so other programs can build on TexMap |
+
+---
+
+The original reference-map workflow below remains available for any tissue/reference, not
+just exhaustion. The release is an alpha foundation: validate normalization, integration,
+and marker choices for your specific dataset before drawing biological conclusions.
 
 ## What TexMap Does
 
@@ -28,7 +219,7 @@ The command-line interface is stage-based, so each step can be run independently
 - Nearest-reference label transfer.
 - Pathway scoring from built-in immune gene sets or user-provided GMT-like TSV files.
 - Self-contained HTML report with integrated coordinates, query/reference coloring, QC metrics, and top cells by pathway score.
-- Toy PBMC example that runs without heavy single-cell dependencies.
+- Demo CD8 exhaustion atlas that runs without heavy single-cell dependencies.
 
 ## Planned Extensions
 
@@ -64,27 +255,61 @@ python -m pip install -e ".[analysis,web]"
 
 ## Quick Start
 
-Run the included PBMC toy example:
+For a step-by-step walkthrough, see [QUICK_START.md](QUICK_START.md).
+
+Build the demo CD8 exhaustion atlas and launch the interactive explorer:
 
 ```bash
-texmap run --config examples/pbmc_toy/config.yaml
+texmap demo
+texmap serve --config examples/tex_atlas/config.yaml   # open http://127.0.0.1:8000
 ```
 
-Open the generated report:
+Or run the batch pipeline to write files (tables, figures, static report):
 
 ```bash
-outputs/pbmc_toy/web/index.html
+texmap run --config examples/tex_atlas/config.yaml
+# outputs/tex_atlas/web/index.html  (static report)
 ```
 
-You can also run each stage separately:
+The demo atlas is synthetic-but-biologically-styled (≈1,200 CD8 T cells across
+naive/memory → effector → progenitor-exhausted → terminal, plus a proliferating branch,
+across mouse and human). It exercises projection, the continuous Tex axes, pathway scoring,
+the regulatory network, clinical benchmarking, multiomic (scATAC) and bulk projection, and
+the web explorer. Replace it with real data via `texmap build-reference` (below).
+
+Run each pipeline stage separately:
 
 ```bash
-texmap prepare --config examples/pbmc_toy/config.yaml
-texmap analyze --config examples/pbmc_toy/config.yaml
-texmap integrate --config examples/pbmc_toy/config.yaml
-texmap pathways --config examples/pbmc_toy/config.yaml
-texmap ai --config examples/pbmc_toy/config.yaml
-texmap report --config examples/pbmc_toy/config.yaml
+texmap prepare  --config examples/tex_atlas/config.yaml
+texmap analyze  --config examples/tex_atlas/config.yaml
+texmap integrate --config examples/tex_atlas/config.yaml
+texmap pathways --config examples/tex_atlas/config.yaml
+texmap ai       --config examples/tex_atlas/config.yaml
+texmap report   --config examples/tex_atlas/config.yaml
+```
+
+### Build a reference from real data
+
+```bash
+texmap build-reference --counts my_counts.csv --metadata my_meta.csv \
+  --label-column cell_type --out examples/my_atlas
+texmap serve --config examples/my_atlas/config.yaml
+```
+
+Accepts a CSV (cells as rows, genes as columns) or `.h5ad` (needs `pip install anndata`).
+
+### Programmatic use (TexAPI)
+
+```python
+from texmap import TexMap, TexAPIClient
+tm = TexMap.from_config("examples/tex_atlas/config.yaml")
+tm.project({"c1": {"PDCD1": 12, "TOX": 8, "TCF7": 0}})   # -> Tex coordinates + composition
+tm.projection_accuracy()                                   # leave-one-out label recovery
+tm.regulators_of("TOX")                                    # recovered TF regulators/targets
+tm.clinical_benchmark(cohort, "Stemness")                  # AUROC / C-index / hazard ratio
+
+api = TexAPIClient("http://127.0.0.1:8000")                # talk to a running server
+api.cellxgene_search("CD8 exhaustion melanoma")
 ```
 
 ## Input Format
@@ -146,6 +371,21 @@ output:
   project_name: My TexMap analysis
 ```
 
+Optional scATAC and bulk RNA inputs can be added to the same config:
+
+```yaml
+scatac:
+  enabled: true
+  peaks: scatac_peaks.csv
+  metadata: scatac_metadata.csv
+  peak_gene_links: peak_gene_links.csv
+
+bulk_rna:
+  enabled: true
+  expression: bulk_rna_expression.csv
+  metadata: bulk_rna_metadata.csv
+```
+
 Paths are resolved relative to the YAML file.
 
 ## Pathway Files
@@ -180,7 +420,7 @@ outputs/<run_name>/
     request_schema.json
     run_result.json
     interpretation.json
-  ml_ready/
+  feature_matrix/
     features.csv
     labels.csv
     splits.csv
@@ -229,7 +469,7 @@ Static SVG heatmap of query-cell pathway activity. Rows are query cells and colu
 
 Structured agentic workflow artifacts. `request_schema.json` documents natural-language and structured request patterns; `run_result.json` provides a chainable output contract; `interpretation.json` contains a plain-language AI-assisted summary.
 
-### `ml_ready/`
+### `feature_matrix/`
 
 Reference-aligned feature, label, and split files for downstream model training and evaluation.
 
@@ -251,7 +491,7 @@ A self-contained browser report showing:
 
 - A cellxgene-like interactive explorer with zoom, pan, hover tooltips, click-to-inspect cell details, search, source/label filters, color-by controls, pathway overlays, and selected-cell CSV download.
 - A figure gallery with generated UMAP and pathway SVGs.
-- AI-enabled feature cards for agentic workflows, ML-ready exports, foundation-model adapters, benchmarks, scalability, and interpretation.
+- AI-enabled feature cards for agentic workflows, feature-matrix exports, foundation-model adapters, benchmarks, scalability, and interpretation.
 - Query cells overlaid with reference cells.
 - QC summary metrics.
 - Pathway selector.
@@ -260,36 +500,34 @@ A self-contained browser report showing:
 
 ## Example Data
 
-The toy PBMC example in `examples/pbmc_toy` contains:
+`texmap demo` generates `examples/tex_atlas/`, a self-contained CD8 exhaustion example:
 
-- Eight query cells across T, NK, monocyte, and B-cell-like programs.
-- A small reference embedding.
-- Reference cell-type labels.
-- Immune pathway gene sets.
-- Tracked expected figure outputs in `examples/pbmc_toy/expected_outputs/figures`.
+- `reference_embedding.csv` / `reference_metadata.csv` — ≈1,200 reference cells with UMAP
+  coordinates, the six continuous Tex axes, and labels (mouse + human, multiple studies).
+- `reference_markers.csv` — marker-panel expression (color-by-gene + regulatory recovery).
+- `query_counts.csv` — a tumor-infiltrating-lymphocyte query to project.
+- `bulk_expression.csv` — bulk RNA samples (bulk mapping).
+- `scatac_peaks.csv` + `scatac_peak_gene_links.csv` — multiomic (scATAC) example.
+- `crossspecies_mouse_query.csv` — a mouse-cased query (cross-species mapping).
+- `clinical_cohort.csv` — 80-patient cohort for the clinical-translation benchmark.
+- `tex_pathways.tsv` — exhaustion regulatory programs.
 
-It is intentionally small so contributors can verify the full workflow quickly.
-
-Preview files:
-
-- `examples/pbmc_toy/counts.csv`
-- `examples/pbmc_toy/config.yaml`
-- `examples/pbmc_toy/expected_outputs/web/index.html`
-- `examples/pbmc_toy/expected_outputs/figures/integrated_umap.svg`
-- `examples/pbmc_toy/expected_outputs/figures/pathway_heatmap.svg`
+The atlas is generated deterministically so the app, tests, and screenshots are reproducible.
+It is a stand-in for a real Module-1 atlas — replace it with real data via
+`texmap build-reference`.
 
 ## Development
 
 Run tests:
 
 ```bash
-python -m pytest
+python -m unittest discover -s tests
 ```
 
 Run the package without installing:
 
 ```bash
-PYTHONPATH=src python -m texmap.cli run --config examples/pbmc_toy/config.yaml
+PYTHONPATH=src python -m texmap.cli run --config examples/tex_atlas/config.yaml
 ```
 
 ## Community Roadmap Ideas
@@ -305,6 +543,36 @@ TexMap can become especially useful to the broader single-cell community by supp
 - Cross-species ortholog mapping with transparent gene losses and many-to-many mappings.
 - Local-first reports for protected patient data, with optional cloud deployment.
 - Benchmark datasets that compare integration quality, label transfer accuracy, runtime, and memory.
+
+## Documentation
+
+Full guides and tutorials live in [docs/tutorials/index.md](docs/tutorials/index.md), and can be
+built into a browsable site (scvelo / scvi-tools style) with MkDocs:
+
+```bash
+python -m pip install -e ".[docs]"
+mkdocs serve          # local preview at http://127.0.0.1:8001
+mkdocs gh-deploy      # publish to GitHub Pages
+```
+
+## Citation
+
+If you use TexMap, please cite this repository:
+
+```bibtex
+@software{texmap,
+  title  = {TexMap: a universal coordinate system for T-cell exhaustion},
+  author = {TexMap contributors},
+  year   = {2026},
+  url    = {https://github.com/<your-org>/TexMap}
+}
+```
+
+## Contributing
+
+Contributions are welcome — new reference recipes, integration-method adapters, epigenetic
+resource links, and tutorials especially. Please open an issue to discuss substantial changes,
+run `python -m unittest discover -s tests` before submitting, and keep the core dependency-free.
 
 ## Repository Status
 

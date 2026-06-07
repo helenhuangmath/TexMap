@@ -1,0 +1,1201 @@
+cell,cell_type,tex_state,species,modality,study
+ref_00000,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00001,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00002,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00003,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00004,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00005,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00006,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00007,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00008,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00009,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00010,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00011,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00012,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00013,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00014,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00015,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00016,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00017,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00018,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00019,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00020,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00021,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00022,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00023,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00024,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00025,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00026,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00027,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00028,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00029,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00030,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00031,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00032,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00033,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00034,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00035,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00036,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00037,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00038,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00039,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00040,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00041,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00042,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00043,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00044,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00045,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00046,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00047,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00048,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00049,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00050,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00051,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00052,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00053,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00054,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00055,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00056,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00057,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00058,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00059,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00060,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00061,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00062,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00063,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00064,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00065,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00066,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00067,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00068,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00069,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00070,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00071,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00072,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00073,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00074,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00075,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00076,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00077,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00078,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00079,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00080,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00081,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00082,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00083,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00084,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00085,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00086,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00087,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00088,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00089,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00090,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00091,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00092,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00093,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00094,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00095,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00096,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00097,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00098,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00099,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00100,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00101,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00102,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00103,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00104,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00105,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00106,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00107,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00108,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00109,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00110,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00111,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00112,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00113,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00114,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00115,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00116,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00117,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00118,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00119,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00120,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00121,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00122,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00123,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00124,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00125,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00126,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00127,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00128,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00129,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00130,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00131,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00132,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00133,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00134,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00135,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00136,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00137,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00138,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00139,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00140,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00141,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00142,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00143,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00144,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00145,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00146,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00147,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00148,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00149,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00150,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00151,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00152,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00153,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00154,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00155,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00156,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00157,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00158,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00159,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00160,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00161,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00162,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00163,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00164,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00165,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00166,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00167,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00168,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00169,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00170,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00171,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00172,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00173,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00174,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00175,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00176,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00177,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00178,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00179,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00180,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00181,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00182,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00183,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00184,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00185,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00186,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00187,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00188,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00189,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00190,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00191,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00192,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00193,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00194,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00195,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00196,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00197,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00198,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00199,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00200,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00201,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00202,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00203,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00204,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00205,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00206,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00207,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00208,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00209,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00210,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00211,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00212,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00213,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00214,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00215,Naive/Memory,Naive/Memory,mouse,scRNA,Melanoma_ICB_2023
+ref_00216,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00217,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00218,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00219,Naive/Memory,Naive/Memory,mouse,scRNA,CART_relapse_2024
+ref_00220,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00221,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00222,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00223,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00224,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00225,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00226,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00227,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00228,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00229,Naive/Memory,Naive/Memory,human,scRNA,Melanoma_ICB_2023
+ref_00230,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00231,Naive/Memory,Naive/Memory,mouse,scRNA,B16_tumor_2022
+ref_00232,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00233,Naive/Memory,Naive/Memory,human,scRNA,HCC_human_2024
+ref_00234,Naive/Memory,Naive/Memory,mouse,scRNA,LCMV_chronic_2023
+ref_00235,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00236,Naive/Memory,Naive/Memory,mouse,scRNA,HCC_human_2024
+ref_00237,Naive/Memory,Naive/Memory,human,scRNA,B16_tumor_2022
+ref_00238,Naive/Memory,Naive/Memory,human,scRNA,CART_relapse_2024
+ref_00239,Naive/Memory,Naive/Memory,human,scRNA,LCMV_chronic_2023
+ref_00240,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00241,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00242,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00243,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00244,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00245,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00246,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00247,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00248,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00249,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00250,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00251,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00252,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00253,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00254,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00255,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00256,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00257,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00258,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00259,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00260,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00261,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00262,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00263,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00264,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00265,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00266,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00267,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00268,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00269,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00270,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00271,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00272,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00273,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00274,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00275,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00276,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00277,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00278,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00279,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00280,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00281,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00282,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00283,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00284,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00285,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00286,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00287,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00288,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00289,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00290,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00291,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00292,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00293,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00294,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00295,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00296,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00297,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00298,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00299,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00300,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00301,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00302,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00303,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00304,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00305,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00306,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00307,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00308,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00309,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00310,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00311,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00312,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00313,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00314,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00315,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00316,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00317,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00318,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00319,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00320,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00321,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00322,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00323,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00324,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00325,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00326,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00327,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00328,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00329,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00330,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00331,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00332,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00333,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00334,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00335,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00336,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00337,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00338,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00339,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00340,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00341,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00342,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00343,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00344,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00345,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00346,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00347,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00348,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00349,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00350,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00351,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00352,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00353,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00354,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00355,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00356,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00357,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00358,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00359,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00360,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00361,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00362,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00363,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00364,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00365,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00366,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00367,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00368,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00369,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00370,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00371,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00372,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00373,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00374,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00375,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00376,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00377,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00378,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00379,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00380,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00381,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00382,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00383,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00384,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00385,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00386,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00387,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00388,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00389,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00390,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00391,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00392,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00393,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00394,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00395,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00396,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00397,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00398,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00399,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00400,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00401,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00402,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00403,Effector,Effector,human,scRNA,HCC_human_2024
+ref_00404,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00405,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00406,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00407,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00408,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00409,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00410,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00411,Effector,Effector,mouse,scRNA,LCMV_chronic_2023
+ref_00412,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00413,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00414,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00415,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00416,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00417,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00418,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00419,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00420,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00421,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00422,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00423,Effector,Effector,human,scRNA,LCMV_chronic_2023
+ref_00424,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00425,Effector,Effector,mouse,scRNA,B16_tumor_2022
+ref_00426,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00427,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00428,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00429,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00430,Effector,Effector,mouse,scRNA,CART_relapse_2024
+ref_00431,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00432,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00433,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00434,Effector,Effector,human,scRNA,B16_tumor_2022
+ref_00435,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00436,Effector,Effector,human,scRNA,Melanoma_ICB_2023
+ref_00437,Effector,Effector,human,scRNA,CART_relapse_2024
+ref_00438,Effector,Effector,mouse,scRNA,Melanoma_ICB_2023
+ref_00439,Effector,Effector,mouse,scRNA,HCC_human_2024
+ref_00440,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00441,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00442,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00443,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00444,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00445,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00446,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00447,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00448,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00449,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00450,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00451,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00452,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00453,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00454,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00455,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00456,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00457,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00458,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00459,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00460,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00461,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00462,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00463,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,HCC_human_2024
+ref_00464,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00465,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00466,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00467,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00468,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00469,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00470,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00471,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00472,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00473,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00474,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00475,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00476,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00477,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00478,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00479,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00480,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00481,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00482,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,HCC_human_2024
+ref_00483,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00484,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,HCC_human_2024
+ref_00485,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00486,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00487,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00488,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00489,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00490,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00491,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00492,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00493,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00494,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00495,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00496,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00497,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00498,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00499,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00500,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00501,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00502,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00503,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00504,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00505,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00506,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00507,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00508,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00509,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00510,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00511,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00512,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00513,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00514,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00515,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00516,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00517,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00518,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,HCC_human_2024
+ref_00519,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,HCC_human_2024
+ref_00520,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00521,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00522,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00523,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00524,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00525,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00526,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00527,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00528,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00529,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00530,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00531,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00532,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00533,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00534,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00535,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00536,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00537,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00538,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00539,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00540,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00541,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00542,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00543,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00544,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00545,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00546,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00547,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00548,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00549,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00550,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00551,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00552,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00553,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00554,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00555,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00556,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00557,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00558,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00559,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00560,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00561,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00562,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00563,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00564,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,HCC_human_2024
+ref_00565,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00566,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,HCC_human_2024
+ref_00567,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00568,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00569,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00570,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00571,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,HCC_human_2024
+ref_00572,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00573,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00574,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,HCC_human_2024
+ref_00575,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00576,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00577,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00578,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00579,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00580,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00581,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00582,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00583,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00584,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00585,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00586,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00587,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00588,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,CART_relapse_2024
+ref_00589,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00590,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00591,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00592,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00593,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00594,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,HCC_human_2024
+ref_00595,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00596,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00597,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,LCMV_chronic_2023
+ref_00598,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00599,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,B16_tumor_2022
+ref_00600,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,B16_tumor_2022
+ref_00601,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,Melanoma_ICB_2023
+ref_00602,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00603,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00604,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00605,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,CART_relapse_2024
+ref_00606,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00607,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,HCC_human_2024
+ref_00608,Tpex (progenitor exhausted),Tpex (progenitor exhausted),mouse,scRNA,Melanoma_ICB_2023
+ref_00609,Tpex (progenitor exhausted),Tpex (progenitor exhausted),human,scRNA,LCMV_chronic_2023
+ref_00610,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00611,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00612,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00613,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00614,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00615,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00616,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00617,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00618,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00619,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00620,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00621,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00622,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00623,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00624,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00625,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00626,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00627,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00628,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00629,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00630,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00631,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00632,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00633,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00634,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00635,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00636,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00637,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00638,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00639,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00640,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00641,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00642,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00643,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00644,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00645,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00646,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00647,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00648,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00649,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00650,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00651,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00652,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00653,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00654,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00655,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00656,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00657,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00658,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00659,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00660,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00661,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00662,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00663,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00664,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00665,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00666,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00667,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00668,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00669,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00670,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00671,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00672,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00673,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00674,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00675,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00676,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00677,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00678,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00679,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00680,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00681,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00682,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00683,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00684,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00685,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00686,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00687,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00688,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00689,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00690,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00691,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00692,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00693,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00694,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00695,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00696,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00697,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00698,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00699,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00700,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00701,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00702,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00703,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00704,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00705,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00706,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00707,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00708,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00709,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00710,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00711,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00712,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00713,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00714,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00715,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00716,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00717,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00718,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00719,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00720,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00721,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00722,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00723,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00724,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00725,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00726,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00727,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00728,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00729,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00730,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00731,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00732,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00733,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00734,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00735,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00736,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00737,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00738,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00739,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00740,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00741,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00742,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00743,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00744,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00745,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00746,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00747,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00748,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00749,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00750,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00751,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00752,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00753,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00754,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00755,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00756,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00757,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00758,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00759,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00760,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00761,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00762,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00763,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00764,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00765,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00766,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00767,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00768,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00769,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00770,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00771,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00772,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00773,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00774,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00775,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00776,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00777,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00778,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00779,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00780,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00781,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00782,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00783,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00784,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00785,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00786,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00787,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00788,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00789,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00790,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00791,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00792,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00793,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00794,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00795,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00796,Tex-intermediate,Tex-intermediate,mouse,scRNA,HCC_human_2024
+ref_00797,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00798,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00799,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00800,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00801,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00802,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00803,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00804,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00805,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00806,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00807,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00808,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00809,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00810,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00811,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00812,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00813,Tex-intermediate,Tex-intermediate,human,scRNA,Melanoma_ICB_2023
+ref_00814,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00815,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00816,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00817,Tex-intermediate,Tex-intermediate,human,scRNA,HCC_human_2024
+ref_00818,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00819,Tex-intermediate,Tex-intermediate,mouse,scRNA,LCMV_chronic_2023
+ref_00820,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00821,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00822,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00823,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00824,Tex-intermediate,Tex-intermediate,human,scRNA,LCMV_chronic_2023
+ref_00825,Tex-intermediate,Tex-intermediate,mouse,scRNA,B16_tumor_2022
+ref_00826,Tex-intermediate,Tex-intermediate,mouse,scRNA,Melanoma_ICB_2023
+ref_00827,Tex-intermediate,Tex-intermediate,human,scRNA,CART_relapse_2024
+ref_00828,Tex-intermediate,Tex-intermediate,human,scRNA,B16_tumor_2022
+ref_00829,Tex-intermediate,Tex-intermediate,mouse,scRNA,CART_relapse_2024
+ref_00830,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00831,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00832,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_00833,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00834,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00835,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00836,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_00837,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00838,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00839,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00840,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00841,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00842,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_00843,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00844,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00845,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00846,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00847,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00848,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00849,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00850,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00851,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00852,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00853,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_00854,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00855,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_00856,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00857,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00858,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00859,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_00860,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00861,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00862,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00863,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00864,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00865,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00866,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00867,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00868,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00869,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00870,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00871,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00872,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00873,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00874,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00875,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00876,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_00877,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00878,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00879,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_00880,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_00881,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00882,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00883,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00884,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00885,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00886,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00887,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00888,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00889,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00890,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_00891,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00892,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00893,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00894,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00895,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00896,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00897,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00898,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00899,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00900,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00901,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00902,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_00903,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00904,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00905,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00906,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00907,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00908,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00909,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00910,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00911,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00912,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_00913,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00914,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00915,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00916,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00917,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00918,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00919,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_00920,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_00921,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00922,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00923,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00924,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00925,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_00926,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00927,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00928,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00929,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00930,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00931,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00932,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00933,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00934,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00935,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00936,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00937,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00938,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00939,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00940,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00941,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00942,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00943,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00944,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00945,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00946,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00947,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00948,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00949,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00950,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00951,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00952,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00953,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00954,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_00955,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00956,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00957,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00958,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00959,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00960,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00961,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00962,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00963,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00964,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00965,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00966,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00967,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00968,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00969,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00970,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00971,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00972,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00973,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00974,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00975,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_00976,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00977,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00978,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00979,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00980,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_00981,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00982,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00983,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_00984,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_00985,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_00986,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00987,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_00988,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00989,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00990,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00991,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_00992,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_00993,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_00994,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_00995,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00996,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_00997,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_00998,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_00999,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_01000,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_01001,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_01002,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_01003,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_01004,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_01005,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01006,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_01007,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_01008,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01009,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01010,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01011,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01012,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_01013,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_01014,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_01015,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_01016,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_01017,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01018,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_01019,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01020,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_01021,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01022,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_01023,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_01024,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01025,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_01026,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_01027,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_01028,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_01029,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01030,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_01031,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_01032,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_01033,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01034,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_01035,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_01036,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_01037,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01038,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_01039,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01040,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01041,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_01042,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01043,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01044,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01045,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01046,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_01047,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_01048,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_01049,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_01050,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_01051,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_01052,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_01053,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01054,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_01055,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_01056,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01057,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_01058,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_01059,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_01060,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_01061,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01062,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_01063,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_01064,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_01065,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_01066,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01067,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_01068,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_01069,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_01070,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_01071,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_01072,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_01073,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01074,Tex-terminal,Tex-terminal,mouse,scRNA,B16_tumor_2022
+ref_01075,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_01076,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_01077,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_01078,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_01079,Tex-terminal,Tex-terminal,mouse,scRNA,CART_relapse_2024
+ref_01080,Tex-terminal,Tex-terminal,human,scRNA,HCC_human_2024
+ref_01081,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_01082,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_01083,Tex-terminal,Tex-terminal,mouse,scRNA,LCMV_chronic_2023
+ref_01084,Tex-terminal,Tex-terminal,human,scRNA,LCMV_chronic_2023
+ref_01085,Tex-terminal,Tex-terminal,human,scRNA,Melanoma_ICB_2023
+ref_01086,Tex-terminal,Tex-terminal,mouse,scRNA,Melanoma_ICB_2023
+ref_01087,Tex-terminal,Tex-terminal,human,scRNA,CART_relapse_2024
+ref_01088,Tex-terminal,Tex-terminal,human,scRNA,B16_tumor_2022
+ref_01089,Tex-terminal,Tex-terminal,mouse,scRNA,HCC_human_2024
+ref_01090,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01091,Tex-proliferating,Tex-proliferating,mouse,scRNA,B16_tumor_2022
+ref_01092,Tex-proliferating,Tex-proliferating,mouse,scRNA,Melanoma_ICB_2023
+ref_01093,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01094,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01095,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01096,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01097,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01098,Tex-proliferating,Tex-proliferating,mouse,scRNA,CART_relapse_2024
+ref_01099,Tex-proliferating,Tex-proliferating,mouse,scRNA,B16_tumor_2022
+ref_01100,Tex-proliferating,Tex-proliferating,mouse,scRNA,Melanoma_ICB_2023
+ref_01101,Tex-proliferating,Tex-proliferating,mouse,scRNA,CART_relapse_2024
+ref_01102,Tex-proliferating,Tex-proliferating,mouse,scRNA,CART_relapse_2024
+ref_01103,Tex-proliferating,Tex-proliferating,human,scRNA,Melanoma_ICB_2023
+ref_01104,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01105,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01106,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01107,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01108,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01109,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01110,Tex-proliferating,Tex-proliferating,mouse,scRNA,Melanoma_ICB_2023
+ref_01111,Tex-proliferating,Tex-proliferating,human,scRNA,Melanoma_ICB_2023
+ref_01112,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01113,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01114,Tex-proliferating,Tex-proliferating,human,scRNA,CART_relapse_2024
+ref_01115,Tex-proliferating,Tex-proliferating,human,scRNA,Melanoma_ICB_2023
+ref_01116,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01117,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01118,Tex-proliferating,Tex-proliferating,mouse,scRNA,B16_tumor_2022
+ref_01119,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01120,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01121,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01122,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01123,Tex-proliferating,Tex-proliferating,mouse,scRNA,B16_tumor_2022
+ref_01124,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01125,Tex-proliferating,Tex-proliferating,human,scRNA,CART_relapse_2024
+ref_01126,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01127,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01128,Tex-proliferating,Tex-proliferating,human,scRNA,Melanoma_ICB_2023
+ref_01129,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01130,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01131,Tex-proliferating,Tex-proliferating,mouse,scRNA,Melanoma_ICB_2023
+ref_01132,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01133,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01134,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01135,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01136,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01137,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01138,Tex-proliferating,Tex-proliferating,mouse,scRNA,CART_relapse_2024
+ref_01139,Tex-proliferating,Tex-proliferating,mouse,scRNA,CART_relapse_2024
+ref_01140,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01141,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01142,Tex-proliferating,Tex-proliferating,human,scRNA,CART_relapse_2024
+ref_01143,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01144,Tex-proliferating,Tex-proliferating,mouse,scRNA,B16_tumor_2022
+ref_01145,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01146,Tex-proliferating,Tex-proliferating,human,scRNA,CART_relapse_2024
+ref_01147,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01148,Tex-proliferating,Tex-proliferating,human,scRNA,CART_relapse_2024
+ref_01149,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01150,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01151,Tex-proliferating,Tex-proliferating,mouse,scRNA,B16_tumor_2022
+ref_01152,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01153,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01154,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01155,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01156,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01157,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01158,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01159,Tex-proliferating,Tex-proliferating,mouse,scRNA,CART_relapse_2024
+ref_01160,Tex-proliferating,Tex-proliferating,mouse,scRNA,Melanoma_ICB_2023
+ref_01161,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01162,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01163,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01164,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01165,Tex-proliferating,Tex-proliferating,mouse,scRNA,CART_relapse_2024
+ref_01166,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01167,Tex-proliferating,Tex-proliferating,mouse,scRNA,Melanoma_ICB_2023
+ref_01168,Tex-proliferating,Tex-proliferating,mouse,scRNA,Melanoma_ICB_2023
+ref_01169,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01170,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01171,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01172,Tex-proliferating,Tex-proliferating,human,scRNA,Melanoma_ICB_2023
+ref_01173,Tex-proliferating,Tex-proliferating,mouse,scRNA,B16_tumor_2022
+ref_01174,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01175,Tex-proliferating,Tex-proliferating,human,scRNA,Melanoma_ICB_2023
+ref_01176,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01177,Tex-proliferating,Tex-proliferating,mouse,scRNA,Melanoma_ICB_2023
+ref_01178,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01179,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01180,Tex-proliferating,Tex-proliferating,human,scRNA,CART_relapse_2024
+ref_01181,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01182,Tex-proliferating,Tex-proliferating,mouse,scRNA,B16_tumor_2022
+ref_01183,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01184,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01185,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01186,Tex-proliferating,Tex-proliferating,human,scRNA,HCC_human_2024
+ref_01187,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01188,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01189,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022
+ref_01190,Tex-proliferating,Tex-proliferating,mouse,scRNA,CART_relapse_2024
+ref_01191,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01192,Tex-proliferating,Tex-proliferating,mouse,scRNA,HCC_human_2024
+ref_01193,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01194,Tex-proliferating,Tex-proliferating,human,scRNA,Melanoma_ICB_2023
+ref_01195,Tex-proliferating,Tex-proliferating,human,scRNA,LCMV_chronic_2023
+ref_01196,Tex-proliferating,Tex-proliferating,human,scRNA,CART_relapse_2024
+ref_01197,Tex-proliferating,Tex-proliferating,mouse,scRNA,Melanoma_ICB_2023
+ref_01198,Tex-proliferating,Tex-proliferating,mouse,scRNA,LCMV_chronic_2023
+ref_01199,Tex-proliferating,Tex-proliferating,human,scRNA,B16_tumor_2022

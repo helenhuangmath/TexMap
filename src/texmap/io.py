@@ -55,10 +55,11 @@ def ensure_output_dirs(config: "TexMapConfig") -> dict[str, Path]:
         "web": root / "web",
         "logs": root / "logs",
         "agent": root / "agent",
-        "ml_ready": root / "ml_ready",
+        "feature_matrix": root / "feature_matrix",
         "foundation_models": root / "foundation_models",
         "benchmark": root / "benchmark",
         "scalability": root / "scalability",
+        "multimodal": root / "multimodal",
     }
     for path in paths.values():
         path.mkdir(parents=True, exist_ok=True)

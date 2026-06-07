@@ -1,0 +1,30 @@
+# TexMap demo atlas configuration
+input:
+  counts: query_counts.csv
+  metadata: query_metadata.csv
+  format: csv
+
+reference:
+  embedding: reference_embedding.csv
+  metadata: reference_metadata.csv
+  label_column: cell_type
+
+analysis:
+  min_genes: 1
+  min_cells: 1
+  n_hvg: 200
+  pathway_sets: tex_pathways.tsv
+
+scatac:
+  enabled: true
+  peaks: scatac_peaks.csv
+  metadata: scatac_metadata.csv
+  peak_gene_links: scatac_peak_gene_links.csv
+
+bulk_rna:
+  enabled: true
+  expression: bulk_expression.csv
+
+output:
+  directory: ../../outputs/tex_atlas
+  project_name: TexMap CD8 Exhaustion Atlas (demo)

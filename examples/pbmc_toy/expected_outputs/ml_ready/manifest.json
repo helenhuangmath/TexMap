@@ -1,9 +1,0 @@
-{
-  "project": "PBMC toy integration",
-  "feature_file": "features.csv",
-  "label_file": "labels.csv",
-  "split_file": "splits.csv",
-  "feature_space": "reference_aligned_umap_plus_normalized_hvg_expression",
-  "split_policy": "deterministic 60/20/20 by sorted cell id",
-  "intended_use": "model training, validation, evaluation, and reference-aligned benchmarking"
-}

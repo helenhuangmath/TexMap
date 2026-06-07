@@ -1,8 +1,0 @@
-{
-  "project": "PBMC toy integration",
-  "task": "exhaustion_state_annotation",
-  "n_evaluated": 8,
-  "accuracy": 1.0,
-  "scoring_harness": "exact label match when expected_label is present in metadata",
-  "prediction_file": "predictions.csv"
-}

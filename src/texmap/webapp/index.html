@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TexMap — CD8 Exhaustion Atlas</title>
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<header id="topbar">
+  <div class="brand">
+    <span class="logo">Tex<span class="logo-accent">Map</span></span>
+    <span class="tagline">A universal coordinate system for T-cell exhaustion</span>
+  </div>
+  <div class="top-actions">
+    <button id="openTexApi" class="btn-bench btn-outline">TexAPI</button>
+    <button id="openTexBench" class="btn-bench">TexBench</button>
+    <div id="projectName" class="project-name">loading…</div>
+  </div>
+</header>
+
+<div id="layout">
+  <aside id="sidebar">
+    <section class="panel">
+      <h2>Color by</h2>
+      <select id="colorBy"></select>
+      <div id="legend" class="legend"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Color by gene</h2>
+      <select id="geneSelect"><option value="">— select gene —</option></select>
+    </section>
+
+    <section class="panel">
+      <h2>Filter source</h2>
+      <label class="chk"><input type="checkbox" id="showReference" checked /> Reference atlas</label>
+      <label class="chk"><input type="checkbox" id="showQuery" checked /> Your projected cells</label>
+      <button id="resetView" class="btn-ghost">Reset view</button>
+    </section>
+
+    <section class="panel">
+      <h2>Project your data</h2>
+      <p class="hint">Upload a counts CSV (cells as rows, genes as columns) to map it into the
+        exhaustion coordinate system.</p>
+      <label class="mini">Integration method</label>
+      <select id="methodSelect"></select>
+      <label class="mini">Query mode</label>
+      <select id="modeSelect"></select>
+      <input type="file" id="fileInput" accept=".csv,.tsv,.txt" />
+      <button id="loadDemoQuery" class="btn-ghost">Use demo query</button>
+      <div id="projectStatus" class="status"></div>
+      <div id="projectSummary" class="summary"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Pathways &amp; programs</h2>
+      <ul id="pathwayList" class="pathway-list"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>Regulatory network</h2>
+      <p class="hint">TF→target network recovered from atlas co-expression, grouped into
+        exhaustion programs.</p>
+      <button id="showNetwork" class="btn-ghost">Show network graph</button>
+    </section>
+
+    <section class="panel">
+      <h2>Benchmarks</h2>
+      <button id="runAccuracy" class="btn-ghost">Cell-state projection accuracy</button>
+      <div class="bench-clin">
+        <select id="clinPredictor"></select>
+        <button id="runClinical" class="btn-ghost">Clinical translation</button>
+      </div>
+      <div id="benchOut" class="summary"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Query CELLxGENE</h2>
+      <p class="hint">Search public CZ CELLxGENE Discover for exhaustion datasets and open them
+        in the cellxgene Explorer.</p>
+      <input type="text" id="cxgQuery" placeholder="e.g. CD8 exhaustion melanoma" />
+      <button id="cxgSearch" class="btn-ghost">Search Discover</button>
+      <div id="cxgSource" class="status"></div>
+      <ul id="cxgResults" class="cxg-list"></ul>
+    </section>
+  </aside>
+
+  <main id="stage">
+    <canvas id="scatter"></canvas>
+    <div id="tooltip" class="tooltip" hidden></div>
+    <div id="axisHud" class="axis-hud"></div>
+    <div id="selectHint" class="select-hint">Shift+drag to select cells</div>
+    <div id="selectInfo" class="select-info" hidden></div>
+  </main>
+
+  <aside id="agentPanel">
+    <h2>TexAgent <span id="agentBackend" class="badge"></span></h2>
+    <details id="agentConnect" class="connect">
+      <summary>Connect a model (real agent)</summary>
+      <p class="hint">Offline now. Paste an API key to turn TexAgent into a live tool-using agent.
+        Google Gemini has a <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">free key</a>.</p>
+      <select id="llmProvider">
+        <option value="google">Google Gemini (free tier)</option>
+        <option value="openai">OpenAI</option>
+      </select>
+      <input type="text" id="llmKey" placeholder="paste API key" />
+      <button id="llmConnect" class="btn-ghost">Connect</button>
+      <div id="llmStatus" class="status"></div>
+    </details>
+    <div id="chatLog" class="chat-log"></div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="e.g. genes for terminal exhaustion" />
+      <button id="chatSend">Ask</button>
+    </div>
+    <div class="suggestions">
+      <button class="sug">Genes for terminal exhaustion</button>
+      <button class="sug">Which programs drive TOX?</button>
+      <button class="sug">Summarize the atlas</button>
+    </div>
+  </aside>
+</div>
+
+<div id="apiOverlay" class="net-overlay" hidden>
+  <div class="net-card">
+    <button id="closeApi" class="close">×</button>
+    <h3>TexAPI — use TexMap from other programs</h3>
+    <div id="apiBody"></div>
+  </div>
+</div>
+
+<div id="benchOverlay" class="net-overlay" hidden>
+  <div class="net-card">
+    <button id="closeBench" class="close">×</button>
+    <h3>TexBench — integration methods &amp; benchmarks</h3>
+    <div id="benchBody"></div>
+  </div>
+</div>
+
+<div id="netOverlay" class="net-overlay" hidden>
+  <div class="net-card">
+    <button id="closeNet" class="close">×</button>
+    <h3>Exhaustion regulatory network</h3>
+    <div class="netbar">
+      <input type="text" id="netFocus" placeholder="focus a gene (e.g. TOX)" />
+      <button id="netFocusBtn" class="btn-ghost">Focus</button>
+      <button id="netReset" class="btn-ghost">Full network</button>
+      <span class="spacer"></span>
+      <button id="netExportJson" class="btn-ghost">Export JSON</button>
+      <button id="netExportPng" class="btn-ghost">Export PNG</button>
+    </div>
+    <div id="netMeta" class="net-meta"></div>
+    <svg id="netSvg" width="820" height="560"></svg>
+    <div id="netLegend" class="net-legend"></div>
+  </div>
+</div>
+
+<div id="cellDetail" class="cell-detail" hidden>
+  <button id="closeDetail" class="close">×</button>
+  <h3 id="detailTitle"></h3>
+  <div id="detailBody"></div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

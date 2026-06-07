@@ -1,9 +1,0 @@
-cell,cell_type,tissue
-ref_T_1,CD4 T cell,blood
-ref_T_2,CD4 T cell,blood
-ref_NK_1,NK cell,blood
-ref_NK_2,NK cell,blood
-ref_Mono_1,Monocyte,blood
-ref_Mono_2,Monocyte,blood
-ref_B_1,B cell,blood
-ref_B_2,B cell,blood

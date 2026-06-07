@@ -9,10 +9,12 @@ from texmap.config import TexMapConfig
 from texmap.figures import write_figures
 from texmap.foundation_models import write_foundation_model_manifest
 from texmap.io import Matrix, ensure_output_dirs, read_counts, read_metadata, read_table, write_table
-from texmap.ml_ready import export_ml_ready
+from texmap.feature_matrix import export_feature_matrix
+from texmap.multimodal import append_multimodal_projections
 from texmap.pathways import compute_pathway_scores
 from texmap.report import write_report
 from texmap.scalability import write_scalability_plan
+from texmap.tex_axes import axis_names, score_tex_axes
 
 
 def prepare(config: TexMapConfig) -> Path:
@@ -55,6 +57,15 @@ def analyze(config: TexMapConfig) -> Path:
     hvg = _top_variable_genes(normalized, config.analysis.n_hvg)
     embedding = _two_axis_embedding(normalized, hvg)
 
+    # Continuous exhaustion coordinates (TexMap core idea): score every cell on the
+    # interpretable Tex axes from curated marker programs.
+    tex = score_tex_axes(normalized)
+    tex_rows = [
+        {"cell": cell, **{a: tex[cell][a] for a in axis_names()}, "tex_state": tex[cell]["tex_state"]}
+        for cell in normalized
+    ]
+    write_table(paths["tables"] / "tex_axes.csv", tex_rows)
+
     write_table(paths["tables"] / "query_embedding.csv", embedding)
     write_table(paths["tables"] / "normalized_hvg_expression.csv", _matrix_to_rows(normalized, hvg))
     write_table(paths["tables"] / "highly_variable_genes.csv", [{"gene": gene} for gene in hvg], index_name="gene")
@@ -77,7 +88,19 @@ def integrate(config: TexMapConfig) -> Path:
         ]
 
     labels = _nearest_reference_labels(query, reference, config)
-    combined = reference + [{**row, **labels.get(str(row["cell"]), {})} for row in query]
+
+    tex_path = paths["tables"] / "tex_axes.csv"
+    tex_by_cell = {row["cell"]: row for row in read_table(tex_path)} if tex_path.exists() else {}
+    axis_cols = axis_names() + ["tex_state"]
+
+    def _with_axes(row: dict) -> dict:
+        cell = str(row["cell"])
+        tex_row = tex_by_cell.get(cell, {})
+        extra = {col: tex_row[col] for col in axis_cols if col in tex_row}
+        return {**row, **labels.get(cell, {}), **extra}
+
+    combined = reference + [_with_axes(row) for row in query]
+    combined = append_multimodal_projections(config, paths, combined)
     write_table(paths["tables"] / "integrated_embedding.csv", combined)
     return paths["tables"] / "integrated_embedding.csv"
 
@@ -93,7 +116,7 @@ def pathways(config: TexMapConfig) -> Path:
 
 def ai(config: TexMapConfig) -> Path:
     paths = ensure_output_dirs(config)
-    export_ml_ready(config, paths)
+    export_feature_matrix(config, paths)
     write_foundation_model_manifest(config, paths)
     score_benchmark(config, paths)
     write_scalability_plan(config, paths)

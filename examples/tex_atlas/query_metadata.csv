@@ -1,0 +1,18 @@
+cell,sample,expected_label
+TIL_00,patient_TIL,Tex-terminal
+TIL_01,patient_TIL,Tex-terminal
+TIL_02,patient_TIL,Tex-terminal
+TIL_03,patient_TIL,Tex-terminal
+TIL_04,patient_TIL,Tex-terminal
+TIL_05,patient_TIL,Tex-terminal
+TIL_06,patient_TIL,Tex-intermediate
+TIL_07,patient_TIL,Tex-intermediate
+TIL_08,patient_TIL,Tex-intermediate
+TIL_09,patient_TIL,Tex-intermediate
+TIL_10,patient_TIL,Tpex (progenitor exhausted)
+TIL_11,patient_TIL,Tpex (progenitor exhausted)
+TIL_12,patient_TIL,Tpex (progenitor exhausted)
+TIL_13,patient_TIL,Effector
+TIL_14,patient_TIL,Effector
+TIL_15,patient_TIL,Tex-proliferating
+TIL_16,patient_TIL,Tex-proliferating

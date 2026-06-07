@@ -44,6 +44,8 @@ Combined reference and query coordinates for visualization.
 | `source` | `reference` or `query`. |
 | `predicted_label` | Optional nearest-reference label assigned to query cells. |
 
+When optional multimodal inputs are enabled, additional rows may use sources such as `scATAC_query` and `bulkRNA_query`. These rows can also include `matched_scRNA_cell`, `shared_features`, `projection_distance`, `projection_confidence`, and `projection_method`.
+
 ## tables/pathway_scores.csv
 
 Pathway activity table with cells as rows and pathways as columns.
@@ -60,15 +62,15 @@ Self-describing, chainable output record for downstream agents or workflow manag
 
 Plain-language interpretation with label counts, top pathway programs, and suggested next steps.
 
-## ml_ready/features.csv
+## feature_matrix/features.csv
 
 Reference-aligned feature matrix for model training and evaluation.
 
-## ml_ready/labels.csv
+## feature_matrix/labels.csv
 
 Cell labels transferred from the reference map.
 
-## ml_ready/splits.csv
+## feature_matrix/splits.csv
 
 Deterministic train/validation/test split assignments.
 
@@ -87,6 +89,30 @@ Benchmark summary, including exact-match accuracy when `expected_label` is provi
 ## scalability/projection_plan.json
 
 Batching and acceleration plan for out-of-core and GPU-ready projection workflows.
+
+## multimodal/projection_summary.json
+
+Summary of optional scATAC and bulk RNA projection jobs.
+
+## tables/scatac_qc.csv
+
+Per-cell scATAC QC table with total fragments, accessible peaks, and metadata.
+
+## tables/scatac_gene_activity.csv
+
+Gene activity matrix created by summing linked peak counts per gene.
+
+## tables/scatac_projection.csv
+
+Projected scATAC cells with UMAP coordinates, transferred labels, matched scRNA anchor cells, and projection confidence.
+
+## tables/bulk_rna_qc.csv
+
+Per-sample bulk RNA QC table with total expression and detected genes.
+
+## tables/bulk_rna_projection.csv
+
+Projected bulk RNA samples with UMAP coordinates, transferred labels, matched scRNA anchor cells, and projection confidence.
 
 ## figures/integrated_umap.svg
 

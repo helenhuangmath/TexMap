@@ -1,0 +1,11 @@
+cell,species,expected_label
+mouse_TIL_00,mouse,Tex-terminal
+mouse_TIL_01,mouse,Tex-terminal
+mouse_TIL_02,mouse,Tex-terminal
+mouse_TIL_03,mouse,Tex-terminal
+mouse_TIL_04,mouse,Tpex (progenitor exhausted)
+mouse_TIL_05,mouse,Tpex (progenitor exhausted)
+mouse_TIL_06,mouse,Tpex (progenitor exhausted)
+mouse_TIL_07,mouse,Effector
+mouse_TIL_08,mouse,Effector
+mouse_TIL_09,mouse,Effector
