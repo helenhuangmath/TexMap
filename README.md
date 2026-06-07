@@ -18,9 +18,9 @@ mechanistic discovery across single-cell, bulk, multiomic, and cross-species dat
   <br><em>The TexMap explorer — project data into the exhaustion coordinate system and explore it interactively.</em>
 </p>
 
-📖 **Documentation & tutorials:** [docs/tutorials/index.md](docs/tutorials/index.md) ·
-🚀 **Quick start:** [QUICK_START.md](QUICK_START.md) ·
-🧬 **Goal & vision:** below
+**Documentation & tutorials:** [docs/tutorials/index.md](docs/tutorials/index.md) ·
+**Quick start:** [QUICK_START.md](QUICK_START.md) ·
+**Goal & vision:** below
 
 Instead of forcing every dataset into incompatible discrete cluster labels (one lab's
 "progenitor Tex" is another's "stem-like Tex"), TexMap places every cell on a small set of
