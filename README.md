@@ -1,8 +1,7 @@
-# <img src="docs/figures/screenshot_explorer.png" alt="" width="0" height="0"> TexMap: A Universal Coordinate System for T Cell Exhaustion
+# <img src="docs/figures/screenshot_explorer.png" alt="" width="0" height="0"> TexMap: A Unified Framework for Exhaustion Biology
 
-<p align="center"><b>A universal coordinate system for T-cell exhaustion.</b><br>
-An open-source reference atlas + computational framework for projection, interpretation, and
-mechanistic discovery across single-cell, bulk, multiomic, and cross-species data.</p>
+<p align="center"><b>TexMap: </b>
+An open-source reference atlas and computational framework for projection, interpretation, and mechanistic discovery across single-cell, bulk, multiomic, and cross-species data.</p>
 
 <p align="center">
   <img alt="Python" src="https://img.shields.io/badge/python-3.9%2B-blue">
@@ -23,14 +22,10 @@ mechanistic discovery across single-cell, bulk, multiomic, and cross-species dat
 **Goal & vision:** below
 
 Instead of forcing every dataset into incompatible discrete cluster labels (one lab's
-"progenitor Tex" is another's "stem-like Tex"), TexMap places every cell on a small set of
-**continuous, interpretable biological axes** — Exhaustion, Stemness, Terminality,
-Cytotoxicity, Proliferation, and a Chromatin-fixation proxy — and projects any new dataset
-into that shared space.
+"progenitor Tex" is another's "stem-like Tex"), TexMap places every cell on a small set of continuous, interpretable biological axes — Exhaustion, Stemness, Terminality, Cytotoxicity, Proliferation, and a Chromatin-fixation proxy — and projects any new dataset into shared space.
 
-TexMap ships with a real **interactive web explorer** (no build step, no heavy
-dependencies) where you can browse the integrated atlas, upload your own data to see where
-it lands, color by continuous axes or pathway programs, and ask a natural-language agent
+TexMap ships with an **interactive web explorer** where you can browse the integrated atlas, upload your own data to see where
+it lands, color by continuous axes or pathway programs, and ask a LLM agent
 about exhaustion biology.
 
 ```bash
@@ -101,8 +96,8 @@ manifold — the biological structure TexMap's continuous axes are designed to q
 and query mode.
 
 In the browser you can: pan/zoom the atlas, color by any continuous axis / cell metadata /
-pathway program / **individual gene** (cellxgene-style), toggle reference vs. your projected
-cells, hover/click for per-cell detail, **shift-drag to select a region** and read its live
+pathway program / individual gene (cellxgene-style), toggle reference vs. your projected
+cells, hover/click for per-cell detail, shift-drag to select a region and read its live
 state composition, upload a counts matrix (or use the demo query) and watch it land with a
 state-composition breakdown, and chat with TexAgent. With a configured live LLM key, TexAgent
 answers grounded on the atlas; otherwise it uses a grounded offline rule-based engine.
@@ -549,8 +544,8 @@ If you use TexMap, please cite this repository:
 
 ```bibtex
 @software{texmap,
-  title  = {TexMap: a universal coordinate system for T-cell exhaustion},
-  author = {TexMap contributors},
+  title  = {TexMap: A Unified Framework for Exhaustion Biology},
+  author = {Hua Huang},
   year   = {2026},
   url    = {https://github.com/helenhuangmath/TexMap}
 }
