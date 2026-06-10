@@ -17,16 +17,12 @@ An open-source reference atlas and computational framework for projection, inter
   <br><em>The TexMap explorer — project data into the exhaustion coordinate system and explore it interactively.</em>
 </p>
 
-**Documentation & tutorials:** [docs/tutorials/index.md](docs/tutorials/index.md) ·
 **Quick start:** [QUICK_START.md](QUICK_START.md) ·
-**Goal & vision:** below
 
 Instead of forcing every dataset into incompatible discrete cluster labels (one lab's
-"progenitor Tex" is another's "stem-like Tex"), TexMap places every cell on a small set of continuous, interpretable biological axes — Exhaustion, Stemness, Terminality, Cytotoxicity, Proliferation, and a Chromatin-fixation proxy — and projects any new dataset into shared space.
+"progenitor Tex" is another's "stem-like Tex"), TexMap places every cell on a small set of continuous, interpretable biological axes -- Exhaustion, Stemness, Terminality, Cytotoxicity, Proliferation, and a Chromatin-fixation proxy, and projects any new dataset into shared space.
 
-TexMap ships with an **interactive web explorer** where you can browse the integrated atlas, upload your own data to see where
-it lands, color by continuous axes or pathway programs, and ask a LLM agent
-about exhaustion biology.
+TexMap builds an interactive web explorer for your data where you can browse the integrated atlas, upload your own data to see where it lands, highlight axes or pathway programs, and ask a LLM agent about your data and exhaustion biology.
 
 ```bash
 # Generate the demo CD8 exhaustion atlas and launch the explorer
@@ -420,30 +416,66 @@ outputs/<run_name>/
     index.html
 ```
 
-Most users should start with `web/index.html`. Use CSV files for downstream analysis in
-Python/R, SVG files for figures, and JSON files for structured metadata or automation.
+### `cell_qc.csv`
 
-| Output | Best way to view | Use it for |
-| --- | --- | --- |
-| `web/index.html` | Browser | Main interactive report: UMAP, projection, QC, pathway overlays, labels, and downloadable selections |
-| `figures/integrated_umap.svg` | GitHub/browser preview, slides, manuscript drafts | Static map of reference and projected query cells |
-| `figures/pathway_heatmap.svg` | GitHub/browser preview | Static heatmap of query-cell pathway activity |
-| `tables/integrated_embedding.csv` | Spreadsheet, Python, R | Coordinates, source labels, projected positions, and transferred labels |
-| `tables/cell_qc.csv` | Spreadsheet, Python, R | Per-cell QC metrics such as total counts, detected genes, and joined metadata |
-| `tables/pathway_scores.csv` | Spreadsheet, Python, R, heatmap tools | Per-cell pathway activity matrix |
-| `agent/interpretation.json` | Text editor or JSON viewer | Plain-language AI-assisted interpretation |
-| `agent/run_result.json` | JSON viewer or scripts | Machine-readable agent output contract |
-| `agent/request_schema.json` | JSON viewer or scripts | Supported natural-language and structured request patterns |
-| `feature_matrix/features.csv` | Python, R, ML workflows | Model-ready feature matrix |
-| `feature_matrix/labels.csv` | Python, R, ML workflows | Labels aligned to the feature matrix |
-| `feature_matrix/splits.csv` | Python, R, ML workflows | Train/test split assignments |
-| `feature_matrix/manifest.json` | JSON viewer or scripts | Feature-matrix metadata |
-| `foundation_models/adapter_manifest.json` | JSON viewer or scripts | Optional scGPT, Geneformer, scFoundation, and UCE adapter metadata |
-| `benchmark/metrics.json` | JSON viewer | Accuracy and benchmark summary |
-| `benchmark/predictions.csv` | Spreadsheet, Python, R | Per-cell or per-sample benchmark predictions |
-| `scalability/projection_plan.json` | JSON viewer or scripts | Batch, out-of-core, and GPU-scaling projection plan |
+Per-cell QC table. Current columns include:
 
-For detailed field-level schemas, see [docs/output_schema.md](docs/output_schema.md).
+- `total_counts`: total count depth for the cell.
+- `n_genes`: number of detected genes.
+- Any user metadata columns joined by cell ID.
+
+### `integrated_embedding.csv`
+
+Coordinates used in the web report. Current columns include:
+
+- `UMAP1`, `UMAP2`: reference or query coordinates.
+- `source`: `reference` or `query`.
+- `predicted_label`: nearest reference label for query cells when reference metadata is supplied.
+
+### `pathway_scores.csv`
+
+Per-cell pathway activity matrix. Rows are query cells and columns are pathway names. Scores are currently simple mean normalized expression across matched genes in each pathway.
+
+### `figures/integrated_umap.svg`
+
+Static SVG graph of the integrated reference map. Reference cells are green and query cells are red. This file is suitable for GitHub previews, slides, and manuscript drafts.
+
+### `figures/pathway_heatmap.svg`
+
+Static SVG heatmap of query-cell pathway activity. Rows are query cells and columns are pathways.
+
+### `agent/`
+
+Structured agentic workflow artifacts. `request_schema.json` documents natural-language and structured request patterns; `run_result.json` provides a chainable output contract; `interpretation.json` contains a plain-language AI-assisted summary.
+
+### `feature_matrix/`
+
+Reference-aligned feature, label, and split files for downstream model training and evaluation.
+
+### `foundation_models/`
+
+Adapter manifest for optional scGPT, Geneformer, scFoundation, and UCE embedding backbones.
+
+### `benchmark/`
+
+Prediction table and metrics for the exhaustion-annotation scoring harness. If metadata includes `expected_label`, TexMap reports exact-match accuracy.
+
+### `scalability/`
+
+Projection plan describing batching, out-of-core, and GPU-acceleration hooks for atlas-scale runs.
+
+### `web/index.html`
+
+A self-contained browser report showing:
+
+- A cellxgene-like interactive explorer with zoom, pan, hover tooltips, click-to-inspect cell details, search, source/label filters, color-by controls, pathway overlays, and selected-cell CSV download.
+- A figure gallery with generated UMAP and pathway SVGs.
+- AI-enabled feature cards for agentic workflows, feature-matrix exports, foundation-model adapters, benchmarks, scalability, and interpretation.
+- Query cells overlaid with reference cells.
+- QC summary metrics.
+- Pathway selector.
+- Top query cells ranked by selected pathway activity.
+- Transferred nearest-reference labels when available.
 
 ## Example Data
 
