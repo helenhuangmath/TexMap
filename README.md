@@ -24,12 +24,6 @@ Instead of forcing every dataset into incompatible discrete cluster labels (one 
 
 TexMap builds an interactive web explorer for your data where you can browse the integrated atlas, upload your own data to see where it lands, highlight axes or pathway programs, and ask a LLM agent about your data and exhaustion biology.
 
-```bash
-# Generate the demo CD8 exhaustion atlas and launch the explorer
-texmap demo
-texmap serve --config examples/tex_atlas/config.yaml
-# open http://127.0.0.1:8000
-```
 
 ## Example integration results
 
@@ -162,7 +156,7 @@ web explorer can color by them.
 
 ### Feature gallery
 
-| Regulatory network (STRING-style) | TexBench dashboard | TexAPI reference |
+| Regulatory network | TexBench dashboard | TexAPI reference |
 | :---: | :---: | :---: |
 | [![Regulatory network](docs/figures/screenshot_regulatory_network.png)](docs/figures/screenshot_regulatory_network.png) | [![TexBench](docs/figures/screenshot_texbench.png)](docs/figures/screenshot_texbench.png) | [![TexAPI](docs/figures/screenshot_texapi.png)](docs/figures/screenshot_texapi.png) |
 | TF→target network recovered from co-expression, grouped into exhaustion programs | Projection accuracy, clinical metrics, and integration-method availability | REST + Python API so other programs can build on TexMap |
@@ -203,7 +197,6 @@ The command-line interface is stage-based, so each step can be run independently
 
 TexMap is intended to grow into a broader community platform. High-priority extension points include:
 
-- `scanpy` and `anndata` loaders for `.h5ad`, 10x Matrix Market, and backed AnnData workflows.
 - scGPT/scFoundation embedding adapters for reference-map projection.
 - scATAC support with peak-by-cell matrices, gene activity scoring, motif enrichment, and co-embedding with scRNA-seq.
 - Epigenetic-resource links to ENCODE, Roadmap Epigenomics, cCREs, motif databases, GWAS loci, and immune enhancer catalogs.
