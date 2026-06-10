@@ -98,7 +98,7 @@ state composition, upload a counts matrix (or use the demo query) and watch it l
 state-composition breakdown, and chat with TexAgent. With a configured live LLM key, TexAgent
 answers grounded on the atlas; otherwise it uses a grounded offline rule-based engine.
 
-### CELLxGENE integration (OS4Science)
+### CELLxGENE integration 
 
 TexMap connects to the broader open-science ecosystem rather than being a standalone island.
 The **Query CELLxGENE** panel searches the public [CZ CELLxGENE Discover](https://cellxgene.cziscience.com/)
@@ -106,8 +106,7 @@ Curation API for exhaustion-relevant datasets and deep-links each result into th
 Explorer, so you can find a reference dataset, inspect it in cellxgene, and bring it back to
 project into the TexMap coordinate system. When offline, it falls back to a curated catalog
 of landmark CD8-exhaustion studies. The explorer itself adopts cellxgene's interaction model
-(color-by-gene, region selection → composition) so it is familiar to that community — which
-is exactly the reusable, interoperable infrastructure OS4Science is meant to fund.
+(color-by-gene, region selection → composition) so it is familiar to that community.
 
 ## Continuous Exhaustion Coordinates
 
